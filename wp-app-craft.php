@@ -4,7 +4,7 @@
  * Description: AppCraft seamlessly integrates WordPress with Uniapp , enabling the swift creation of mobile applications directly from your WordPress content.
  * Version: 1.0.0
  * Author: DomiUI
- * Author URI: [您的网站或相关页面链接]
+ * Author URI: https://github.com/poisonboy/wp-app-craft
  * License: GPL v3
  * License URI: https://www.gnu.org/licenses/gpl-3.0.html
  * Text Domain: wp-wp-app-craft
