@@ -47,7 +47,7 @@ function appcraft_register_api_hooks()
     // 搜索文章
 
     register_rest_route('wp-app-craft/v1', '/search', array(
-        'methods' => 'GET',
+        'methods' => 'POST',
         'callback' => 'appcraft_search_posts',
         'permission_callback' => '__return_true',
     ));
