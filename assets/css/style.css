@@ -1,0 +1,93 @@
+.cf-file__inner {
+    width: 80px !important;
+    height: 80px !important;
+}
+
+.cf-file__name {
+    display: none!important;
+}
+
+
+.carbon-theme-options #poststuff #post-body.columns-2 {
+    margin-right: 0 !important;
+    position: relative;
+}
+
+.carbon-theme-options #post-body.columns-2 #postbox-container-1 {
+    float: none;
+    margin-right: 20px!important;
+    width: 280px;
+    position: fixed!important;
+    top: 42px!important;
+    right: 0;
+    z-index: 999;
+}
+
+.carbon-theme-options .postbox,
+.carbon-theme-options #major-publishing-actions {
+    border: none;
+    box-shadow: none;
+    background: none;
+}
+
+.carbon-theme-options .postbox h3 {
+    display: none;
+}
+.carbon-theme-options .button{
+    color: #1c6ef3;
+    border-color: #1c6ef3;}
+    
+    
+    .carbon-theme-options .button-secondary:hover, .carbon-theme-options .button.hover, .carbon-theme-options .button:hover {
+    color: #0663fa;
+    border-color: #1c6ef3;
+    font-weight: 600;
+}
+.carbon-theme-options .button-primary {
+      background: #1c6ef3;
+    border-color: #588ff4;
+    color: #fff;
+}
+
+.carbon-theme-options .button-primary.focus,
+.carbon-theme-options .button-primary.hover,
+.carbon-theme-options .button-primary:focus,
+.carbon-theme-options .button-primary:hover {
+    background: #0663fa;
+    border-color: #c9c5ff;color: #fff;
+    font-weight: 600;
+}
+.cf-file__browse{
+     border: none!important;
+      background: none!important;
+}
+.cf-file__preview{
+    bottom: 0!important;
+        overflow: unset!important;
+}
+
+ 
+.cf-file__remove { 
+    top: -5px!important;
+    right: -5px!important;
+}
+.w-30 .cf-field__body{
+    width: 30%;
+}
+
+
+.appcraft-inline-radio .cf-radio__list,.appcraft-inline-radio .cf-set__list,.appcraft-free-images .cf-complex__groups{
+ display: flex;
+    flex-wrap: wrap;
+}
+
+.appcraft-inline-radio .cf-radio__list-item,.appcraft-inline-radio .cf-set__list-item {
+    margin-right: 12px;
+}
+
+ 
+.appcraft-free-images  .cf-complex__group {
+  
+    margin-bottom: 0;
+    width: 20%;
+}
