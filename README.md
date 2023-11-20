@@ -1,15 +1,3 @@
-=== appcraft===
-Contributors:domiui
-Tags: api, appbuilder, creatapp, appcraft, multi-platform, app
-Requires at least: 5.0
-Tested up to: 6.1
-Stable tag: 1.0.0
-Requires PHP: 7.0
-License: GPLv3
-License URI: https://www.gnu.org/licenses/gpl-3.0.html
-
-== Description ==
- 
 # AppCraft
 是一款强大的WordPress插件，允许您轻松将WordPress站点转换为多端小程序和应用。借助appcraft的跨平台特性，您可以一次编写，多端运行，无需为每个平台单独开发。
 
