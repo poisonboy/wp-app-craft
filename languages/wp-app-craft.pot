@@ -1,9 +1,10 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Plugins - WordPress To appcraft - Stable (latest release)\n"
+"Project-Id-Version: Plugins - WordPress To appcraft - Stable (latest release)"
+"\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-07 06:39+0000\n"
+"POT-Creation-Date: 2023-11-20 13:42+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -16,81 +17,154 @@ msgstr ""
 "X-Loco-Version: 2.6.4; wp-6.2.2\n"
 "X-Domain: wp-app-craft"
 
-#: includes/admin/index.php:117
+#: includes/class/appcraft-user-log.php:59
+msgid " articles earned reward"
+msgstr ""
+
+#: includes/admin/index.php:123
 msgid ""
 " plugin has been installed. You can start using it now. Next, you can do "
 "some basic settings and advanced settings, then download the front-end "
 "source code for integration. Please refer to"
 msgstr ""
 
-#. Description of the plugin
-msgid "A plugin to integrate WordPress with appcraft"
+#: includes/class/appcraft-user-sign.php:44
+msgid "7-day consecutive check-in reward"
 msgstr ""
 
-#: includes/fields/settings.php:212
+#: includes/class/appcraft-user-management.php:110
+msgid "Account deleted"
+msgstr ""
+
+#: includes/class/appcraft-comments.php:24
+msgid "ago"
+msgstr ""
+
+#: includes/class/appcraft-user-sign.php:24
+msgid "Already checked in today"
+msgstr ""
+
+#: includes/fields/extension-settings.php:155
+#: includes/fields/extension-settings.php:268
 msgid "APP Page"
 msgstr ""
 
-#: includes/fields/settings.php:19
+#. 页面标题
+#: includes/admin/index.php:6 includes/admin/index.php:7
+#: includes/admin/index.php:121 includes/admin/index.php:123
+#: includes/admin/index.php:124 includes/admin/index.php:137
+#: includes/admin/index.php:140
+msgid "AppCraft"
+msgstr ""
+
+#. Name of the plugin
+msgid "AppCraft - WordPress to Uniapp  Integrator"
+msgstr ""
+
+#. Description of the plugin
+msgid ""
+"AppCraft seamlessly integrates WordPress with Uniapp , enabling the swift "
+"creation of mobile applications directly from your WordPress content."
+msgstr ""
+
+#: includes/admin/points.php:103
+msgid "appcraft User Points Records"
+msgstr ""
+
+#: includes/fields/basic-settings.php:18
 msgid "Application"
 msgstr ""
 
-#: includes/fields/settings.php:33
+#: includes/fields/basic-settings.php:33
+msgid "Application Default Avatar"
+msgstr ""
+
+#: includes/fields/basic-settings.php:32
 msgid "Application Default Thumb"
 msgstr ""
 
-#: includes/fields/settings.php:30
+#: includes/fields/basic-settings.php:29
 msgid "Application Icon"
 msgstr ""
 
-#: includes/fields/settings.php:21
+#: includes/fields/basic-settings.php:20
 msgid "Application Introduction"
 msgstr ""
 
-#: includes/fields/settings.php:31
+#: includes/fields/basic-settings.php:30
 msgid "Application Logo"
 msgstr ""
 
-#: includes/fields/settings.php:20
+#: includes/fields/basic-settings.php:19
 msgid "Application Name"
 msgstr ""
 
-#: includes/fields/settings.php:32
+#: includes/fields/basic-settings.php:31
 msgid "Application Share Cover"
 msgstr ""
 
-#: includes/fields/user.php:12
-msgid "Avatar"
+#: includes/admin/points.php:125
+msgid "Apply"
 msgstr ""
 
-#: includes/fields/user.php:16
-msgid "Avatar Upload Count"
-msgstr ""
-
-#: includes/admin/verification.php:431 includes/fields/settings.php:15
-msgid "Basic Settings"
-msgstr ""
-
-#: includes/fields/settings.php:117
-msgid "Before Title"
+#: includes/admin/points.php:122
+msgid "Ascending"
 msgstr ""
 
 #: includes/fields/user.php:14
+msgid "Avatar"
+msgstr ""
+
+#: includes/class/appcraft-upload-avatar.php:16
+#: includes/class/appcraft-upload-avatar.php:60
+msgid "Avatar not provided"
+msgstr ""
+
+#: includes/fields/user.php:19
+msgid "Avatar Upload Count"
+msgstr ""
+
+#: includes/class/appcraft-upload-avatar.php:10
+msgid "Avatar upload limit reached"
+msgstr ""
+
+#: includes/class/appcraft-upload-avatar.php:40
+msgid "Avatar uploaded successfully"
+msgstr ""
+
+#: includes/fields/extension-settings.php:255
+msgid "Background Color"
+msgstr ""
+
+#: includes/admin/verification.php:444 includes/fields/basic-settings.php:14
+msgid "Basic Settings"
+msgstr ""
+
+#: includes/fields/extension-settings.php:60
+msgid "Before Title"
+msgstr ""
+
+#: includes/fields/user.php:17
 msgid "Bio"
 msgstr ""
 
-#: includes/admin/index.php:135
+#: includes/fields/extension-settings.php:258
+msgid "Button Text"
+msgstr ""
+
+#: includes/admin/index.php:140
 msgid ""
 "Can seamlessly integrate WordPress with appcraft. It allows WordPress site "
 "owners to generate their own mini programs and APPs without hiring technical "
 "personnel, learning programming skills, or paying fees."
 msgstr ""
 
-#: includes/fields/settings.php:74 includes/fields/settings.php:75
+#: includes/fields/extension-settings.php:17
+#: includes/fields/extension-settings.php:18
 msgid "Carousel"
 msgstr ""
 
-#: includes/admin/index.php:156
+#: includes/admin/index.php:161
 msgid "Case Studies"
 msgstr ""
 
@@ -98,13 +172,16 @@ msgstr ""
 msgid "Categories"
 msgstr ""
 
-#: includes/fields/settings.php:39
+#: includes/fields/basic-settings.php:40
 msgid "Categories Page Categories"
 msgstr ""
 
-#: includes/fields/settings.php:83 includes/fields/settings.php:122
-#: includes/fields/settings.php:163 includes/fields/settings.php:207
-#: includes/fields/settings.php:267
+#: includes/fields/extension-settings.php:26
+#: includes/fields/extension-settings.php:65
+#: includes/fields/extension-settings.php:106
+#: includes/fields/extension-settings.php:150
+#: includes/fields/extension-settings.php:210
+#: includes/fields/extension-settings.php:263
 msgid "Category"
 msgstr ""
 
@@ -116,155 +193,413 @@ msgstr ""
 msgid "Category Image"
 msgstr ""
 
-#: includes/fields/settings.php:61
+#: includes/class/appcraft-user-sign.php:14
+#: includes/class/appcraft-user-sign.php:51
+msgid "Check-in successful"
+msgstr ""
+
+#: includes/class/appcraft-posts-fav.php:20
+msgid "Collection successful"
+msgstr ""
+
+#: includes/class/appcraft-comment-create.php:59
+msgid "Comment submitted successfully"
+msgstr ""
+
+#: includes/class/appcraft-comment-create.php:58
+msgid "Comment submitted successfully, will be visible after admin approval"
+msgstr ""
+
+#: includes/fields/basic-settings.php:74
 msgid "Comment Time Limit (minutes)"
 msgstr ""
 
-#: includes/fields/settings.php:211 includes/fields/settings.php:271
+#: includes/class/appcraft-comment-create.php:32
+msgid "Commenting too frequently, please try again later"
+msgstr ""
+
+#: includes/class/appcraft-user-management.php:78
+msgid "Confirm Account Deletion"
+msgstr ""
+
+#: includes/class/appcraft-user-management.php:83
+msgid "Confirmation email sent, please check your inbox."
+msgstr ""
+
+#: includes/fields/basic-settings.php:48
+msgid "Continuous Sign-in 7 Days Extra Reward Points"
+msgstr ""
+
+#: includes/fields/extension-settings.php:154
+#: includes/fields/extension-settings.php:214
+#: includes/fields/extension-settings.php:267
 msgid "Copy"
 msgstr ""
 
-#: includes/fields/settings.php:231 includes/fields/settings.php:282
+#: includes/fields/extension-settings.php:174
+#: includes/fields/extension-settings.php:225
+#: includes/fields/extension-settings.php:287
 msgid "Copy Text"
 msgstr ""
 
-#: includes/fields/settings.php:24
+#: includes/fields/basic-settings.php:23
 msgid "Copyright Statement"
 msgstr ""
 
-#: includes/fields/settings.php:78
+#: includes/fields/extension-settings.php:21
 msgid "Cover Image"
 msgstr ""
 
-#: includes/fields/settings.php:37
+#: includes/fields/basic-settings.php:43
+msgid "Credit Settings"
+msgstr ""
+
+#: includes/fields/extension-settings.php:251
+#: includes/fields/extension-settings.php:252
+msgid "Credit Tasks"
+msgstr ""
+
+#: includes/fields/basic-settings.php:52
+msgid "Daily Points Limit"
+msgstr ""
+
+#: includes/class/appcraft-comments.php:10
+msgid "day"
+msgstr ""
+
+#: includes/fields/post.php:29
+msgid "Deduct Points"
+msgstr ""
+
+#: includes/admin/points.php:123
+msgid "Descending"
+msgstr ""
+
+#: includes/fields/extension-settings.php:257
+msgid "Description"
+msgstr ""
+
+#: includes/fields/basic-settings.php:38
 msgid "Display"
 msgstr ""
 
-#: includes/fields/settings.php:27
+#: includes/fields/basic-settings.php:26
 msgid ""
 "Display at the bottom of my page, can be copyright information, or terms of "
 "service and privacy policy links, support HTML rich text."
 msgstr ""
 
-#: includes/admin/index.php:119 includes/admin/index.php:167
+#: includes/admin/index.php:124 includes/admin/index.php:172
 msgid "Documentation"
 msgstr ""
 
 #. Author of the plugin
-msgid "domiui"
+msgid "DomiUI"
 msgstr ""
 
-#: includes/admin/index.php:144
+#: includes/admin/index.php:149
 msgid "Download Source Code"
 msgstr ""
 
-#: includes/fields/settings.php:59
+#: includes/class/appcraft-posts-read.php:42
+#, php-format
+msgid "Earned reward for reading article with ID %s"
+msgstr ""
+
+#: includes/class/appcraft-user-register.php:11
+#: includes/class/appcraft-user-register.php:122
+msgid "Email already registered"
+msgstr ""
+
+#: includes/class/appcraft-user-register.php:16
+msgid "Email Verification Code"
+msgstr ""
+
+#: includes/fields/basic-settings.php:72
 msgid "Enable Comment Moderation"
 msgstr ""
 
-#: includes/admin/verification.php:432 includes/fields/settings.php:71
+#: includes/fields/basic-settings.php:82
+msgid "Enable Email Verify"
+msgstr ""
+
+#: includes/fields/post.php:41
+msgid ""
+"Enter the paid content to be hidden. HTML code can be used to insert images "
+"and videos. It is recommended to use a 135 editor to edit the layout and "
+"style before copying the code."
+msgstr ""
+
+#: includes/admin/points.php:112
+msgid "Event:"
+msgstr ""
+
+#: includes/admin/verification.php:445
+#: includes/fields/extension-settings.php:14
 msgid "Extension Settings"
 msgstr ""
 
-#: includes/fields/settings.php:113 includes/fields/settings.php:114
+#: includes/class/appcraft-comment-create.php:50
+msgid "Failed to comment"
+msgstr ""
+
+#: includes/class/appcraft-user-management.php:85
+msgid "Failed to send email, please try again later."
+msgstr ""
+
+#: includes/class/appcraft-user-register.php:24
+msgid "Failed to send verification code"
+msgstr ""
+
+#: includes/fields/extension-settings.php:56
+#: includes/fields/extension-settings.php:57
 msgid "Featured Posts"
 msgstr ""
 
-#: includes/admin/index.php:119
+#: includes/class/appcraft-upload-avatar.php:28
+msgid "File size exceeds limit"
+msgstr ""
+
+#: includes/class/appcraft-upload-avatar.php:24
+msgid "File type not allowed"
+msgstr ""
+
+#: includes/admin/index.php:124
 msgid "for detailed operations"
 msgstr ""
 
-#: includes/fields/settings.php:152 includes/fields/settings.php:153
+#: includes/fields/extension-settings.php:95
+#: includes/fields/extension-settings.php:96
 msgid "Grid Navigation"
 msgstr ""
 
-#: includes/fields/settings.php:38
+#: includes/fields/basic-settings.php:39
 msgid "Homepage Categories"
 msgstr ""
 
-#: includes/fields/settings.php:157 includes/fields/settings.php:197
-#: includes/fields/settings.php:257
+#: includes/class/appcraft-comments.php:11
+msgid "hour"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://github.com/poisonboy/wp-app-craft"
+msgstr ""
+
+#: includes/fields/extension-settings.php:100
+#: includes/fields/extension-settings.php:140
+#: includes/fields/extension-settings.php:200
 msgid "I18nKey"
 msgstr ""
 
-#: includes/fields/settings.php:156 includes/fields/settings.php:200
-#: includes/fields/settings.php:260
+#: includes/fields/extension-settings.php:99
+#: includes/fields/extension-settings.php:143
+#: includes/fields/extension-settings.php:203
+#: includes/fields/extension-settings.php:254
 msgid "Icon"
 msgstr ""
 
-#: includes/fields/settings.php:201 includes/fields/settings.php:261
+#: includes/fields/extension-settings.php:144
+#: includes/fields/extension-settings.php:204
 msgid "Icon Color"
 msgstr ""
 
-#: includes/fields/settings.php:98 includes/fields/settings.php:137
-#: includes/fields/settings.php:178 includes/fields/settings.php:240
-#: includes/fields/settings.php:291
+#: includes/fields/extension-settings.php:41
+#: includes/fields/extension-settings.php:80
+#: includes/fields/extension-settings.php:121
+#: includes/fields/extension-settings.php:183
+#: includes/fields/extension-settings.php:234
+#: includes/fields/extension-settings.php:296
 msgid "ID"
 msgstr ""
 
-#: includes/admin/index.php:158
+#: includes/admin/index.php:163
 msgid ""
 "If you generate mini programs or APPs using this plugin, you can submit them "
 "to us as case studies for display."
 msgstr ""
 
-#: includes/fields/settings.php:12
+#: includes/class/appcraft-user-register.php:110
+msgid "Incomplete parameters"
+msgstr ""
+
+#: includes/class/appcraft-user-register.php:8
+msgid "Incorrect email format"
+msgstr ""
+
+#: includes/class/appcraft-upload-avatar.php:65
+msgid "Incorrect parameters"
+msgstr ""
+
+#: includes/class/appcraft-user-login.php:40
+msgid "Incorrect password"
+msgstr ""
+
+#: includes/class/appcraft-user-register.php:135
+#: includes/class/appcraft-user-profile.php:65
+#: includes/class/appcraft-user-management.php:50
+#: includes/class/appcraft-user-login.php:29
+msgid "Incorrect verification code"
+msgstr ""
+
+#: includes/fields/basic-settings.php:44
+msgid "Initial Points"
+msgstr ""
+
+#: includes/class/appcraft-user-management.php:103
+msgid "Invalid or expired token"
+msgstr ""
+
+#: includes/class/appcraft-comment-create.php:19
+msgid "Invalid post ID"
+msgstr ""
+
+#: includes/class/appcraft-posts-fav.php:7
+#: includes/class/appcraft-posts-fav.php:27
+msgid "Invalid request"
+msgstr ""
+
+#: includes/fields/basic-settings.php:50
+msgid "Invitation Points"
+msgstr ""
+
+#: includes/admin/points.php:139
+msgid "Invitations Count at Event"
+msgstr ""
+
+#: includes/class/appcraft-user-register.php:174
+#, php-format
+msgid "Invited new user with ID %s"
+msgstr ""
+
+#: includes/admin/points.php:136
+msgid "Inviter ID"
+msgstr ""
+
+#: includes/class/appcraft-user-register.php:69
+msgid "Inviter ID does not exist"
+msgstr ""
+
+#: includes/admin/points.php:110
+msgid "Inviter ID:"
+msgstr ""
+
+#: includes/fields/basic-settings.php:10
+#: includes/fields/extension-settings.php:10
 msgid "Item"
 msgstr ""
 
-#: includes/fields/settings.php:11
+#: includes/fields/basic-settings.php:9
+#: includes/fields/extension-settings.php:9
 msgid "Items"
 msgstr ""
 
-#: includes/fields/settings.php:47
+#: includes/admin/points.php:160
+msgid "items"
+msgstr ""
+
+#: includes/class/appcraft-comments.php:24
+msgid "just now"
+msgstr ""
+
+#: includes/fields/basic-settings.php:60
 msgid "JWT Expiration Time (hours)"
 msgstr ""
 
-#: includes/fields/settings.php:44
+#: includes/fields/basic-settings.php:57
 msgid "JWT Secret Key"
 msgstr ""
 
-#: includes/fields/settings.php:86 includes/fields/settings.php:125
-#: includes/fields/settings.php:166 includes/fields/settings.php:210
-#: includes/fields/settings.php:270
+#: includes/fields/extension-settings.php:29
+#: includes/fields/extension-settings.php:68
+#: includes/fields/extension-settings.php:109
+#: includes/fields/extension-settings.php:153
+#: includes/fields/extension-settings.php:213
+#: includes/fields/extension-settings.php:266
 msgid "Link"
 msgstr ""
 
-#: includes/fields/settings.php:80 includes/fields/settings.php:119
-#: includes/fields/settings.php:160 includes/fields/settings.php:204
-#: includes/fields/settings.php:264
+#: includes/fields/extension-settings.php:23
+#: includes/fields/extension-settings.php:62
+#: includes/fields/extension-settings.php:103
+#: includes/fields/extension-settings.php:147
+#: includes/fields/extension-settings.php:207
+#: includes/fields/extension-settings.php:259
 msgid "Link Type"
 msgstr ""
 
-#: includes/fields/settings.php:89 includes/fields/settings.php:128
-#: includes/fields/settings.php:169 includes/fields/settings.php:215
-#: includes/fields/settings.php:223 includes/fields/settings.php:274
+#: includes/fields/extension-settings.php:32
+#: includes/fields/extension-settings.php:71
+#: includes/fields/extension-settings.php:112
+#: includes/fields/extension-settings.php:158
+#: includes/fields/extension-settings.php:166
+#: includes/fields/extension-settings.php:217
+#: includes/fields/extension-settings.php:271
+#: includes/fields/extension-settings.php:279
 msgid "Link URL"
 msgstr ""
 
-#: includes/fields/settings.php:65
+#: includes/fields/basic-settings.php:78
 msgid "Max Comments Within Time Limit"
 msgstr ""
 
-#: includes/fields/settings.php:25
+#: includes/class/appcraft-comments.php:12
+msgid "minute"
+msgstr ""
+
+#: includes/class/appcraft-user-profile.php:65
+msgid "Missing email verification code"
+msgstr ""
+
+#: includes/class/appcraft-comments.php:9
+msgid "month"
+msgstr ""
+
+#: includes/fields/post.php:6
+msgid "More Settings"
+msgstr ""
+
+#: includes/fields/basic-settings.php:24
 msgid "MY Page Bottom"
 msgstr ""
 
-#: includes/fields/settings.php:254
+#: includes/fields/extension-settings.php:197
 msgid "My page List Menu"
 msgstr ""
 
-#: includes/fields/settings.php:193
+#: includes/fields/extension-settings.php:136
 msgid "My page Menu"
 msgstr ""
 
-#: includes/fields/settings.php:194
+#: includes/fields/extension-settings.php:137
 msgid "My page Two-Column Menu"
 msgstr ""
 
-#: includes/fields/settings.php:85 includes/fields/settings.php:124
-#: includes/fields/settings.php:165 includes/fields/settings.php:209
-#: includes/fields/settings.php:269
+#: includes/class/appcraft-user-register.php:76
+msgid "New user registration"
+msgstr ""
+
+#: includes/admin/points.php:118
+msgid "Number of Invitations"
+msgstr ""
+
+#: includes/class/appcraft-points.php:57
+msgid "Operation too frequent, please try again later."
+msgstr ""
+
+#: includes/admin/points.php:114
+msgid "Order By:"
+msgstr ""
+
+#: includes/admin/points.php:120
+msgid "Order Direction:"
+msgstr ""
+
+#: includes/fields/extension-settings.php:28
+#: includes/fields/extension-settings.php:67
+#: includes/fields/extension-settings.php:108
+#: includes/fields/extension-settings.php:152
+#: includes/fields/extension-settings.php:212
+#: includes/fields/extension-settings.php:265
 msgid "Page"
 msgstr ""
 
@@ -276,9 +611,97 @@ msgstr ""
 msgid "Page not found"
 msgstr ""
 
-#: includes/fields/settings.php:82 includes/fields/settings.php:121
-#: includes/fields/settings.php:162 includes/fields/settings.php:206
-#: includes/fields/settings.php:266
+#: includes/fields/post.php:40
+msgid "Paid Content"
+msgstr ""
+
+#: includes/class/appcraft-posts-read.php:16
+#, php-format
+msgid "Paid content for reading article with ID %s"
+msgstr ""
+
+#: includes/class/appcraft-user-register.php:126
+msgid "Password must be at least 6 characters"
+msgstr ""
+
+#: includes/class/appcraft-user-management.php:14
+msgid "Password must be at least 8 characters long"
+msgstr ""
+
+#: includes/class/appcraft-user-management.php:19
+msgid "Password must contain at least one letter and one number"
+msgstr ""
+
+#: includes/class/appcraft-user-management.php:25
+msgid "Password update failed"
+msgstr ""
+
+#: includes/class/appcraft-user-management.php:28
+msgid "Password updated"
+msgstr ""
+
+#: includes/fields/post.php:13
+msgid "Pay"
+msgstr ""
+
+#: includes/class/appcraft-comment-create.php:24
+msgid "Please do not submit duplicate comments"
+msgstr ""
+
+#: includes/fields/post.php:19
+msgid ""
+"Please enter reward points, e.g., 10; for random, enter the reward points "
+"range, e.g., 1-10."
+msgstr ""
+
+#: includes/class/appcraft-user-management.php:77
+msgid ""
+"Please reply using the email associated with your account, specifying the "
+"UID of the account to be deleted and the reason. We will lock your account "
+"upon receiving the email and permanently delete all information after one "
+"week. \n"
+"\n"
+"Note: This action is irreversible. If you did not request account deletion, "
+"please ignore this email."
+msgstr ""
+
+#: includes/class/appcraft-user-management.php:72
+msgid "Please wait 15 minutes before trying again"
+msgstr ""
+
+#: includes/class/appcraft-points.php:62
+msgid "Points cannot be negative, please provide a positive points value."
+msgstr ""
+
+#: includes/class/appcraft-posts-read.php:27
+msgid "Points deduction successful, you can now read the article."
+msgstr ""
+
+#: includes/admin/points.php:116 includes/admin/points.php:135
+msgid "Points Earned"
+msgstr ""
+
+#: includes/admin/points.php:134
+msgid "Points Event"
+msgstr ""
+
+#: includes/admin/points.php:10
+msgid "Points Records"
+msgstr ""
+
+#: includes/class/appcraft-posts-read.php:52
+#, php-format
+msgid ""
+"Points reward successful, you have earned %s points, thank you for your "
+"reading."
+msgstr ""
+
+#: includes/fields/extension-settings.php:25
+#: includes/fields/extension-settings.php:64
+#: includes/fields/extension-settings.php:105
+#: includes/fields/extension-settings.php:149
+#: includes/fields/extension-settings.php:209
+#: includes/fields/extension-settings.php:262
 msgid "Post"
 msgstr ""
 
@@ -286,29 +709,72 @@ msgstr ""
 msgid "Post ID"
 msgstr ""
 
-#: includes/class/appcraft-posts.php:145
+#: includes/class/appcraft-comment-create.php:14
+msgid "Post ID and comment content cannot be empty"
+msgstr ""
+
+#: includes/class/appcraft-posts.php:171
 msgid "Post not found"
 msgstr ""
 
-#: includes/fields/settings.php:23
+#: includes/fields/basic-settings.php:22
 msgid "Privacy Policy"
 msgstr ""
 
-#: includes/fields/user.php:15
+#: includes/fields/user.php:18
 msgid "Profile Update Count"
 msgstr ""
 
-#: includes/fields/settings.php:40
+#: includes/class/appcraft-user-profile.php:75
+msgid "Profile updated successfully"
+msgstr ""
+
+#: includes/fields/basic-settings.php:41
 msgid "Rand Posts Categories"
 msgstr ""
 
-#: includes/fields/settings.php:43
+#: includes/class/appcraft-user-log.php:59
+msgid "Reading ID as "
+msgstr ""
+
+#: includes/fields/post.php:10
+msgid "Reading Type"
+msgstr ""
+
+#: includes/admin/points.php:126
+msgid "Reset"
+msgstr ""
+
+#: includes/fields/post.php:12
+msgid "Reward"
+msgstr ""
+
+#: includes/fields/post.php:17
+msgid "Reward Points Range"
+msgstr ""
+
+#: includes/fields/basic-settings.php:56
 msgid "Safe"
 msgstr ""
 
-#: includes/fields/settings.php:84 includes/fields/settings.php:123
-#: includes/fields/settings.php:164 includes/fields/settings.php:208
-#: includes/fields/settings.php:268
+#: includes/class/appcraft-comments.php:13
+msgid "second"
+msgstr ""
+
+#: includes/class/appcraft-user-register.php:22
+msgid "Server does not support email sending"
+msgstr ""
+
+#: includes/fields/basic-settings.php:46
+msgid "Sign-in Points"
+msgstr ""
+
+#: includes/fields/extension-settings.php:27
+#: includes/fields/extension-settings.php:66
+#: includes/fields/extension-settings.php:107
+#: includes/fields/extension-settings.php:151
+#: includes/fields/extension-settings.php:211
+#: includes/fields/extension-settings.php:264
 msgid "Tag"
 msgstr ""
 
@@ -324,7 +790,7 @@ msgstr ""
 msgid "Tags"
 msgstr ""
 
-#: includes/fields/settings.php:22
+#: includes/fields/basic-settings.php:21
 msgid "Terms of Service"
 msgstr ""
 
@@ -332,52 +798,161 @@ msgstr ""
 msgid "Thumbnail Image"
 msgstr ""
 
-#: includes/fields/settings.php:79 includes/fields/settings.php:118
-#: includes/fields/settings.php:158 includes/fields/settings.php:198
-#: includes/fields/settings.php:258
+#: includes/admin/points.php:137
+msgid "Time"
+msgstr ""
+
+#: includes/fields/extension-settings.php:22
+#: includes/fields/extension-settings.php:61
+#: includes/fields/extension-settings.php:101
+#: includes/fields/extension-settings.php:141
+#: includes/fields/extension-settings.php:201
+#: includes/fields/extension-settings.php:256
 msgid "Title"
 msgstr ""
 
-#. 页面标题
-#. Name of the plugin
-#: includes/admin/index.php:5 includes/admin/index.php:6
-#: includes/admin/index.php:115 includes/admin/index.php:117
-#: includes/admin/index.php:119 includes/admin/index.php:132
-#: includes/admin/index.php:135
-msgid "AppCraft"
+#: includes/class/appcraft-user-login.php:11
+msgid "Too many login attempts, please try again later."
 msgstr ""
 
-#: includes/fields/user.php:10
+#: includes/admin/points.php:117 includes/admin/points.php:138
+msgid "Total Points at Event"
+msgstr ""
+
+#: includes/class/appcraft-posts-fav.php:37
+msgid "Unfavorite successful"
+msgstr ""
+
+#: includes/class/appcraft-user-register.php:152
+msgid "Unknown User"
+msgstr ""
+
+#: includes/class/appcraft-user-profile.php:49
+msgid "Update limit reached"
+msgstr ""
+
+#: includes/class/appcraft-user-sign.php:32
+msgid "User check-in"
+msgstr ""
+
+#: includes/admin/points.php:132
+msgid "User ID"
+msgstr ""
+
+#: includes/admin/points.php:106
+msgid "User ID:"
+msgstr ""
+
+#: includes/class/appcraft-verify.php:35
+msgid "User not logged in or token is invalid"
+msgstr ""
+
+#: includes/admin/points.php:9
+msgid "User Records"
+msgstr ""
+
+#: includes/fields/user.php:12
 msgid "User Settings"
 msgstr ""
 
-#: includes/fields/settings.php:51
+#: includes/fields/basic-settings.php:64
 msgid "User Update Profile Times"
 msgstr ""
 
-#: includes/fields/settings.php:55
+#: includes/fields/basic-settings.php:68
 msgid "User Upload Avartar Times"
 msgstr ""
 
+#: includes/admin/points.php:133
+msgid "Username"
+msgstr ""
+
+#: includes/class/appcraft-user-register.php:119
+msgid "Username already exists"
+msgstr ""
+
+#: includes/class/appcraft-user-register.php:116
+msgid "Username contains illegal characters"
+msgstr ""
+
+#: includes/class/appcraft-user-register.php:113
+msgid "Username length must be between 3-20 characters"
+msgstr ""
+
+#: includes/class/appcraft-user-login.php:36
+msgid "Username or email address does not exist"
+msgstr ""
+
+#: includes/admin/points.php:108
+msgid "Username:"
+msgstr ""
+
+#: includes/class/appcraft-user-register.php:16
+msgid "valid for 5 minutes"
+msgstr ""
+
+#. 或其他有效的父级菜单 slug
 #: includes/admin/verification.php:45 includes/admin/verification.php:46
 msgid "Validation"
 msgstr ""
 
-#: includes/admin/verification.php:435
+#: includes/admin/verification.php:448
 msgid "Validation Required"
 msgstr ""
 
-#: includes/admin/index.php:141 includes/admin/index.php:172
+#: includes/class/appcraft-user-register.php:132
+#: includes/class/appcraft-user-profile.php:65
+#: includes/class/appcraft-user-management.php:47
+#: includes/class/appcraft-user-login.php:26
+msgid "Verification code has expired"
+msgstr ""
+
+#: includes/class/appcraft-user-register.php:19
+msgid "Verification code sent"
+msgstr ""
+
+#: includes/fields/basic-settings.php:84
+msgid "version（auto）"
+msgstr ""
+
+#: includes/admin/index.php:146 includes/admin/index.php:177
 msgid "View Documentation"
 msgstr ""
 
-#: includes/admin/index.php:160
+#: includes/admin/index.php:165
 msgid "View Now"
 msgstr ""
 
-#: includes/admin/index.php:170
+#: includes/fields/user.php:23
+msgid "VIP Expiry Date"
+msgstr ""
+
+#: includes/fields/user.php:21
+msgid "VIP Level"
+msgstr ""
+
+#: includes/class/appcraft-comments.php:8
+msgid "year"
+msgstr ""
+
+#: includes/admin/index.php:175
 msgid ""
 "You can follow the documentation step-by-step without any coding knowledge. "
 "It takes about an hour to go from installing the plugin to generating the "
 "app.。"
+msgstr ""
+
+#: includes/class/appcraft-posts-read.php:9
+msgid "You have already unlocked this content."
+msgstr ""
+
+#: includes/class/appcraft-points.php:98
+#, php-format
+msgid ""
+"Your points are insufficient, your current account points are %s, and the "
+"points required for %s are %s."
+msgstr ""
+
+#: includes/class/appcraft-user-register.php:16
+msgid "Your verification code is:"
 msgstr ""

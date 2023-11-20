@@ -7,7 +7,7 @@
  * Author URI: https://github.com/poisonboy/wp-app-craft
  * License: GPL v3
  * License URI: https://www.gnu.org/licenses/gpl-3.0.html
- * Text Domain: wp-wp-app-craft
+ * Text Domain: wp-app-craft
  * Domain Path: /languages
  */
 
@@ -26,7 +26,7 @@ use Carbon_Fields\Field;
 include_once 'includes/admin/index.php';   
 include_once 'includes/admin/settings.php'; 
 include_once 'includes/admin/points.php';   
-include_once 'includes/admin/verification.php';  
+   
 include_once 'includes/fields/category.php'; 
 include_once 'includes/fields/post.php'; 
 include_once 'includes/fields/user.php';

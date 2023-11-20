@@ -1,7 +1,6 @@
 {
     "require": {
         "htmlburger/carbon-fields": "^3.6",
-        "firebase/php-jwt": "^6.8",
-        "wechatpay/wechatpay": "^1.4"
+        "firebase/php-jwt": "^6.8" 
     }
 }
