@@ -8,7 +8,7 @@ function appcraft_get_page($request)
     $page = get_page($id);
 
     if (empty($page)) {
-        return new WP_Error('appcraft_page_not_found', __('Page not found', 'app-craft'), array('status' => 404));
+        return new WP_Error('appcraft_page_not_found', __('Page not found', 'wp-app-craft'), array('status' => 404));
     }
 
     $data = array(

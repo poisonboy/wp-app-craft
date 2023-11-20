@@ -46,7 +46,7 @@ function appcraft_update_user_profile(WP_REST_Request $request)
 
     $update_count = carbon_get_user_meta($user_id, 'appcraft_update_count');
     if ($update_count-- <= 0) {
-        return new WP_REST_Response(['status' => 'error', 'message' => __('Update limit reached', 'app-craft')], 403);
+        return new WP_REST_Response(['status' => 'error', 'message' => __('Update limit reached', 'wp-app-craft')], 403);
     }
     carbon_set_user_meta($user_id, 'appcraft_update_count', $update_count);
 
@@ -62,7 +62,7 @@ function appcraft_update_user_profile(WP_REST_Request $request)
         if (is_null($code) || !$stored_code || $stored_code !== $code) {
             return new WP_REST_Response([
                 'status' => 'error',
-                'message' => is_null($code) ? __('Missing email verification code', 'app-craft') : (!$stored_code ? __('Verification code has expired', 'app-craft') : __('Incorrect verification code', 'app-craft')),
+                'message' => is_null($code) ? __('Missing email verification code', 'wp-app-craft') : (!$stored_code ? __('Verification code has expired', 'wp-app-craft') : __('Incorrect verification code', 'wp-app-craft')),
                 400
             ]);
         }
@@ -72,7 +72,7 @@ function appcraft_update_user_profile(WP_REST_Request $request)
 
     $updated_profile_response = appcraft_get_user_profile($request);
     $response_data = $updated_profile_response->get_data();
-    $response_data['message'] = __('Profile updated successfully', 'app-craft');
+    $response_data['message'] = __('Profile updated successfully', 'wp-app-craft');
 
     return new WP_REST_Response($response_data, 200);
 }

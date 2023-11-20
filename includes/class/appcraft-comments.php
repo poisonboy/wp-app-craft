@@ -5,12 +5,12 @@ function time_elapsed_string($datetime, $full = false) {
     $diff = $now->diff($ago);
 
     $string = array(
-        'y' => __('year', 'app-craft'),
-        'm' => __('month', 'app-craft'), 
-        'd' => __('day', 'app-craft'),
-        'h' => __('hour', 'app-craft'),
-        'i' => __('minute', 'app-craft'),
-        's' => __('second', 'app-craft'),
+        'y' => __('year', 'wp-app-craft'),
+        'm' => __('month', 'wp-app-craft'), 
+        'd' => __('day', 'wp-app-craft'),
+        'h' => __('hour', 'wp-app-craft'),
+        'i' => __('minute', 'wp-app-craft'),
+        's' => __('second', 'wp-app-craft'),
     );
     foreach ($string as $k => &$v) {
         if ($diff->$k) {
@@ -21,7 +21,7 @@ function time_elapsed_string($datetime, $full = false) {
     }
 
     if (!$full) $string = array_slice($string, 0, 1);
-    return $string ? implode(', ', $string) . ' ' . __('ago', 'app-craft') : __('just now', 'app-craft');
+    return $string ? implode(', ', $string) . ' ' . __('ago', 'wp-app-craft') : __('just now', 'wp-app-craft');
 }
 
 

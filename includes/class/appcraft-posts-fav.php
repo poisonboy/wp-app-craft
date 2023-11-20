@@ -4,7 +4,7 @@ function appcraft_add_favorite($request) {
     $post_id = (int) $request['post_id'];
 
     if (!$user_id || !$post_id) {
-        return new WP_Error('invalid_request', __('Invalid request', 'app-craft'), array('status' => 400));
+        return new WP_Error('invalid_request', __('Invalid request', 'wp-app-craft'), array('status' => 400));
     }
     
     $favorites = get_user_meta($user_id, 'appcraft_favorites', true);
@@ -17,14 +17,14 @@ function appcraft_add_favorite($request) {
         update_user_meta($user_id, 'appcraft_favorites', $favorites);
     }
 
-    return new WP_REST_Response(['code' => 200, 'message' => __('Collection successful', 'app-craft')]);
+    return new WP_REST_Response(['code' => 200, 'message' => __('Collection successful', 'wp-app-craft')]);
 }
 function appcraft_remove_favorite($request) {
     $user_id = verify_user_token($request);
     $post_id = (int) $request['post_id'];
 
     if (!$user_id || !$post_id) {
-        return new WP_Error('invalid_request', __('Invalid request', 'app-craft'), array('status' => 400));
+        return new WP_Error('invalid_request', __('Invalid request', 'wp-app-craft'), array('status' => 400));
     }
     
 
@@ -34,7 +34,7 @@ function appcraft_remove_favorite($request) {
         update_user_meta($user_id, 'appcraft_favorites', $favorites);
     }
 
-    return new WP_REST_Response(['code' => 200, 'message' => __('Unfavorite successful', 'app-craft')]);
+    return new WP_REST_Response(['code' => 200, 'message' => __('Unfavorite successful', 'wp-app-craft')]);
 }
 
 function appcraft_get_favorites($request) {

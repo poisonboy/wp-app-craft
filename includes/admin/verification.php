@@ -42,8 +42,8 @@ function appcraft_add_validation_page()
 {
     add_submenu_page(
         'admin.php', // 或其他有效的父级菜单 slug
-        __('Validation', 'app-craft'),
-        __('Validation', 'app-craft'),
+        __('Validation', 'wp-app-craft'),
+        __('Validation', 'wp-app-craft'),
         'manage_options',
         'appcraft_validation_page',
         'appcraft_render_validation_page'
@@ -331,7 +331,7 @@ function appcraft_render_validation_page()
                                     <div class="css-qj3urb">扫码关注公众号，发送‘验证码’获取邀请码</div>
                                     <div class="Qrcode-content">
                                         <div class="Qrcode-img">
-                                            <img class="Qrcode-qrcode" width="150" height="150" src="/wp-content/plugins/app-craft/assets/images/qrcode.jpg" alt="二维码">
+                                            <img class="Qrcode-qrcode" width="150" height="150" src="/wp-content/plugins/wp-app-craft/assets/images/qrcode.jpg" alt="二维码">
                                         </div>
                                         <div class="Qrcode-guide-message">
                                             <div class="css-x9rxz4"> 或者微信搜索‘微慕’</div>
@@ -405,7 +405,7 @@ $args = [
     'headers' => ['Content-Type' => 'application/json']
 ];
 
-$response = wp_remote_post('https://xsy.xcxgy.cn/wp-json/app-craft/v1/validatecode', $args);
+$response = wp_remote_post('https://xsy.xcxgy.cn/wp-json/wp-app-craft/v1/validatecode', $args);
 
 if (is_wp_error($response)) {
     echo '<p>Error: ' . $response->get_error_message() . '</p>';
@@ -441,15 +441,15 @@ function appcraft_add_plugin_page_settings_link(array $links): array {
     $is_validated = get_transient('appcraft_is_validated');
 
     if ($is_validated) {
-        $settings_link = '<a href="admin.php?page=appcraft_basic_settings">' . __('Basic Settings', 'app-craft') . '</a>';
-        $extension_settings_link = '<a href="admin.php?page=appcraft_extension_settings">' . __('Extension Settings', 'app-craft') . '</a>';
+        $settings_link = '<a href="admin.php?page=appcraft_basic_settings">' . __('Basic Settings', 'wp-app-craft') . '</a>';
+        $extension_settings_link = '<a href="admin.php?page=appcraft_extension_settings">' . __('Extension Settings', 'wp-app-craft') . '</a>';
         array_unshift($links, $settings_link, $extension_settings_link);
     } else {
-        $validation_link = '<a href="admin.php?page=appcraft_validation_page">' . __('Validation Required', 'app-craft') . '</a>';
+        $validation_link = '<a href="admin.php?page=appcraft_validation_page">' . __('Validation Required', 'wp-app-craft') . '</a>';
         array_unshift($links, $validation_link);
     }
 
     return $links;
 }
-add_filter('plugin_action_links_app-craft/app-craft.php', 'appcraft_add_plugin_page_settings_link');
+add_filter('plugin_action_links_wp-app-craft/wp-app-craft.php', 'appcraft_add_plugin_page_settings_link');
  

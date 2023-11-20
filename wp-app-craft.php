@@ -7,7 +7,7 @@
  * Author URI: [您的网站或相关页面链接]
  * License: GPL v3
  * License URI: https://www.gnu.org/licenses/gpl-3.0.html
- * Text Domain: wp-app-craft
+ * Text Domain: wp-wp-app-craft
  * Domain Path: /languages
  */
 
@@ -70,7 +70,7 @@ function appcraft_activate_plugin() {
 
  
 function load_appcraft_textdomain() {
-    load_plugin_textdomain( 'app-craft', FALSE, basename( dirname( __FILE__ ) ) . '/languages/' );
+    load_plugin_textdomain( 'wp-app-craft', FALSE, basename( dirname( __FILE__ ) ) . '/languages/' );
 }
 add_action( 'plugins_loaded', 'load_appcraft_textdomain' );
 

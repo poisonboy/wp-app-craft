@@ -168,7 +168,7 @@ function appcraft_get_post($request)
     $post = get_post($id);
  
     if (empty($post) || $post->post_status !== 'publish') {
-  return new WP_Error('post_not_found', __('Post not found', 'app-craft'), array('status' => 404));
+  return new WP_Error('post_not_found', __('Post not found', 'wp-app-craft'), array('status' => 404));
 } 
 
     $tags = get_the_tags($post->ID);

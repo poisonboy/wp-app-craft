@@ -32,7 +32,7 @@ function verify_user_token(WP_REST_Request $request) {
     // 检查验证结果
     if (is_wp_error($decoded) || !isset($decoded->user_id)) {
         // 直接在这里处理错误情况
-        return new WP_Error('jwt_not_logged_in', __('User not logged in or token is invalid', 'app-craft'), array('status' => 401));
+        return new WP_Error('jwt_not_logged_in', __('User not logged in or token is invalid', 'wp-app-craft'), array('status' => 401));
     }
 
     // 返回用户ID

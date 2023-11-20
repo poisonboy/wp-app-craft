@@ -3,9 +3,9 @@
 // Add new columns to the post list
 add_filter('manage_posts_columns', 'appcraft_add_post_columns');
 function appcraft_add_post_columns($columns) {
-    $columns['post_id'] = __('Post ID', 'app-craft');
-    $columns['categories'] = __('Categories', 'app-craft');
-    $columns['tags'] = __('Tags', 'app-craft');
+    $columns['post_id'] = __('Post ID', 'wp-app-craft');
+    $columns['categories'] = __('Categories', 'wp-app-craft');
+    $columns['tags'] = __('Tags', 'wp-app-craft');
     return $columns;
 }
 
@@ -34,7 +34,7 @@ function appcraft_fill_post_columns($column_name, $post_id) {
 // Add new columns to the page list
 add_filter('manage_pages_columns', 'appcraft_add_page_columns');
 function appcraft_add_page_columns($columns) {
-    $columns['page_id'] = __('Page ID', 'app-craft');
+    $columns['page_id'] = __('Page ID', 'wp-app-craft');
     return $columns;
 }
 
@@ -49,7 +49,7 @@ function appcraft_fill_page_columns($column_name, $post_id) {
 // Add new columns to the category list
 add_filter('manage_edit-category_columns', 'appcraft_add_category_columns');
 function appcraft_add_category_columns($columns) {
-    $columns['category_id'] = __('Category ID', 'app-craft');
+    $columns['category_id'] = __('Category ID', 'wp-app-craft');
     return $columns;
 }
 
@@ -65,7 +65,7 @@ function appcraft_fill_category_columns($out, $column_name, $term_id) {
 // Add new columns to the tag list
 add_filter('manage_edit-post_tag_columns', 'appcraft_add_tag_columns');
 function appcraft_add_tag_columns($columns) {
-    $columns['tag_id'] = __('Tag ID', 'app-craft');
+    $columns['tag_id'] = __('Tag ID', 'wp-app-craft');
     return $columns;
 }
 

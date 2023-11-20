@@ -25,7 +25,7 @@ function appcraft_get_tag($request)
     $tag = get_tag($id);
 
     if (empty($tag)) {
-        return new WP_Error('appcraft_tag_not_found', __('Tag not found', 'app-craft'), array('status' => 404));
+        return new WP_Error('appcraft_tag_not_found', __('Tag not found', 'wp-app-craft'), array('status' => 404));
     }
 
     $data = array(

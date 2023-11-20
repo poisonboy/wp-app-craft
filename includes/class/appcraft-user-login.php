@@ -8,7 +8,7 @@ function appcraft_login_user($request)
     $failed_attempts = get_transient('failed_login_attempts_' . $ip_address) ?: 0;
 
     if ($failed_attempts >= 5) {
-        return new WP_REST_Response(array('status' => 'error', 'message' => __('Too many login attempts, please try again later.', 'app-craft')), 429);
+        return new WP_REST_Response(array('status' => 'error', 'message' => __('Too many login attempts, please try again later.', 'wp-app-craft')), 429);
     }
     
 
@@ -23,21 +23,21 @@ function appcraft_login_user($request)
     if ($login_type === 'email_code') {
         $stored_code = get_transient("email_code_" . $email);
         if (!$stored_code) {
-            return new WP_REST_Response(['status' => 'error', 'message' => __('Verification code has expired', 'app-craft')], 400);
+            return new WP_REST_Response(['status' => 'error', 'message' => __('Verification code has expired', 'wp-app-craft')], 400);
         }
         if ($stored_code !== $email_code) {
-            return new WP_REST_Response(['status' => 'error', 'message' => __('Incorrect verification code', 'app-craft')], 400);
+            return new WP_REST_Response(['status' => 'error', 'message' => __('Incorrect verification code', 'wp-app-craft')], 400);
         }
         // Clear the verification code
         delete_transient("email_code_" . $email);
         $user = get_user_by('email', $email);
     } else {
         if (!$user) {
-            return new WP_REST_Response(array('status' => 'error', 'message' => __('Username or email address does not exist', 'app-craft')), 400);
+            return new WP_REST_Response(array('status' => 'error', 'message' => __('Username or email address does not exist', 'wp-app-craft')), 400);
         }
         // Validate password
         if (!wp_check_password($password, $user->data->user_pass, $user->ID)) {
-            return new WP_REST_Response(array('status' => 'error', 'message' => __('Incorrect password', 'app-craft')), 400);
+            return new WP_REST_Response(array('status' => 'error', 'message' => __('Incorrect password', 'wp-app-craft')), 400);
         }
     }
 

@@ -6,14 +6,14 @@ function appcraft_pay_for_article($request) {
     $has_payed = get_user_meta($user_id, '_appcraft_paid_points_' . $article_id, true)  ==  'payed' ;
 
     if ($has_payed) {
-        return ['success' => false, 'message' => __('You have already unlocked this content.', 'app-craft')];
+        return ['success' => false, 'message' => __('You have already unlocked this content.', 'wp-app-craft')];
         
         }
     $pay_points = get_post_meta($article_id, '_appcraft_pay_points', true);
     $pay_points = abs(intval($pay_points));  
 
     // 扣除积分
-    $result = appcraft_manage_points($user_id, $pay_points, sprintf(__('Paid content for reading article with ID %s', 'app-craft'), $article_id), 'subtract', $article_id);
+    $result = appcraft_manage_points($user_id, $pay_points, sprintf(__('Paid content for reading article with ID %s', 'wp-app-craft'), $article_id), 'subtract', $article_id);
     if (is_wp_error($result)) {
         return $result;  
     }
@@ -24,7 +24,7 @@ function appcraft_pay_for_article($request) {
      
     return [
         'success' => true, 
-        'message' => __('Points deduction successful, you can now read the article.', 'app-craft'), 
+        'message' => __('Points deduction successful, you can now read the article.', 'wp-app-craft'), 
         'has_payed' => true,
         'paid_content' => $paid_content
     ];
@@ -39,7 +39,7 @@ function appcraft_reward_for_article($request) {
     $reward_points = get_random_points_from_range($reward_range); 
 
     // 增加积分
-    $result = appcraft_manage_points($user_id, $reward_points, sprintf(__('Earned reward for reading article with ID %s', 'app-craft'), $article_id), 'add', $article_id);
+    $result = appcraft_manage_points($user_id, $reward_points, sprintf(__('Earned reward for reading article with ID %s', 'wp-app-craft'), $article_id), 'add', $article_id);
     if (is_wp_error($result)) {
         return $result;  
     }
@@ -49,7 +49,7 @@ function appcraft_reward_for_article($request) {
  
     return [
         'success' => true, 
-        'message' => sprintf(__('Points reward successful, you have earned %s points, thank you for your reading.', 'app-craft'), $reward_points), 
+        'message' => sprintf(__('Points reward successful, you have earned %s points, thank you for your reading.', 'wp-app-craft'), $reward_points), 
         'has_earned' => true, 
         'reward_points' => $reward_points
     ];

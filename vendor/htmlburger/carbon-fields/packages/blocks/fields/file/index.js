@@ -13,7 +13,7 @@ addFilter( 'carbon-fields.file.block', 'carbon-fields/blocks', ( OriginalFileFie
 	return (
 		<OriginalFileField
 			buttonLabel={ __( 'Select File', 'carbon-fields-ui' ) }
-			mediaLibraryButtonLabel={ __( 'Use File', 'app-craft' ) }
+			mediaLibraryButtonLabel={ __( 'Use File', 'wp-app-craft' ) }
 			mediaLibraryTitle={ __( 'Select File', 'carbon-fields-ui' ) }
 			{ ...props }
 		/>

@@ -9,18 +9,18 @@ function appcraft_add_user_fields()
     $updateprofile_times_default_value = carbon_get_theme_option('appcraft_updateprofile_times');
     $uploadavatar_times_default_value = carbon_get_theme_option('appcraft_uploadavatar_times');
    
-    Container::make('user_meta', __('User Settings', 'app-craft'))
+    Container::make('user_meta', __('User Settings', 'wp-app-craft'))
         ->add_fields(array(
-            Field::make('image', 'appcraft_avatar', __('Avatar', 'app-craft'))
+            Field::make('image', 'appcraft_avatar', __('Avatar', 'wp-app-craft'))
                 ->set_value_type('url'),
 
-            Field::make('rich_text', 'appcraft_bio', __('Bio', 'app-craft')),
-            Field::make('text', 'appcraft_update_count', __('Profile Update Count', 'app-craft'))->set_attribute('type', 'number')->set_default_value($updateprofile_times_default_value),
-            Field::make('text', 'appcraft_upload_count', __('Avatar Upload Count', 'app-craft'))->set_attribute('type', 'number')->set_default_value($uploadavatar_times_default_value),
+            Field::make('rich_text', 'appcraft_bio', __('Bio', 'wp-app-craft')),
+            Field::make('text', 'appcraft_update_count', __('Profile Update Count', 'wp-app-craft'))->set_attribute('type', 'number')->set_default_value($updateprofile_times_default_value),
+            Field::make('text', 'appcraft_upload_count', __('Avatar Upload Count', 'wp-app-craft'))->set_attribute('type', 'number')->set_default_value($uploadavatar_times_default_value),
             
-             Field::make('select', 'appcraft_vip_level', __('VIP Level', 'app-craft'))
+             Field::make('select', 'appcraft_vip_level', __('VIP Level', 'wp-app-craft'))
                 ->add_options($vip_levels),   
-            Field::make('date', 'appcraft_vip_expiry', __('VIP Expiry Date', 'app-craft')),
+            Field::make('date', 'appcraft_vip_expiry', __('VIP Expiry Date', 'wp-app-craft')),
        
         ));
 }

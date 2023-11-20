@@ -56,7 +56,7 @@ function get_rewarded_articles_points($request)
     // 查询获取指定文章的积分记录
 
     // Translated event description
-    $event_description = __('Reading ID as ', 'app-craft') . $article_id . __(' articles earned reward', 'app-craft');
+    $event_description = __('Reading ID as ', 'wp-app-craft') . $article_id . __(' articles earned reward', 'wp-app-craft');
 
     $results = $wpdb->get_results($wpdb->prepare(
         "SELECT * FROM $table_name WHERE event LIKE %s AND article_id = %d",

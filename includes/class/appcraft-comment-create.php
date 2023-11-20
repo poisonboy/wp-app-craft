@@ -11,17 +11,17 @@ function appcraft_create_comment($request) {
     $parent_comment_id = $request['parent_comment_id']; // Parent comment ID, for replying
 
     if (empty($post_id) || empty($comment_content)) {
-        return new WP_REST_Response(['status' => 'error', 'message' => __('Post ID and comment content cannot be empty', 'app-craft')], 422);
+        return new WP_REST_Response(['status' => 'error', 'message' => __('Post ID and comment content cannot be empty', 'wp-app-craft')], 422);
     }
 
     // Check if the post ID is valid
     if (!get_post($post_id)) {
-        return new WP_REST_Response(['status' => 'error', 'message' => __('Invalid post ID', 'app-craft')], 422);
+        return new WP_REST_Response(['status' => 'error', 'message' => __('Invalid post ID', 'wp-app-craft')], 422);
     }
 
     // Check for duplicate content
     if (is_duplicate_comment($user_id, $post_id, $comment_content)) {
-        return new WP_REST_Response(['status' => 'error', 'message' => __('Please do not submit duplicate comments', 'app-craft')], 409);
+        return new WP_REST_Response(['status' => 'error', 'message' => __('Please do not submit duplicate comments', 'wp-app-craft')], 409);
     }
 
     // Check comment frequency limit
@@ -29,7 +29,7 @@ function appcraft_create_comment($request) {
     $max_comments_within_limit = carbon_get_theme_option('appcraft_max_comments');
 
     if (is_user_over_comment_limit($user_id, $time_limit, $max_comments_within_limit)) {
-        return new WP_REST_Response(['status' => 'error', 'message' => __('Commenting too frequently, please try again later', 'app-craft')], 429);
+        return new WP_REST_Response(['status' => 'error', 'message' => __('Commenting too frequently, please try again later', 'wp-app-craft')], 429);
     }
 
     // Retrieve the value of the comment moderation switch
@@ -47,7 +47,7 @@ function appcraft_create_comment($request) {
     $comment_id = wp_insert_comment($comment_data);
 
     if (!$comment_id) {
-        return new WP_REST_Response(['status' => 'error', 'message' => __('Failed to comment', 'app-craft')], 500);
+        return new WP_REST_Response(['status' => 'error', 'message' => __('Failed to comment', 'wp-app-craft')], 500);
     }
 
     // Clear post cache
@@ -55,8 +55,8 @@ function appcraft_create_comment($request) {
 
     // Return success result
     $success_message = $comment_moderation_enabled
-        ? __('Comment submitted successfully, will be visible after admin approval', 'app-craft')
-        : __('Comment submitted successfully', 'app-craft');
+        ? __('Comment submitted successfully, will be visible after admin approval', 'wp-app-craft')
+        : __('Comment submitted successfully', 'wp-app-craft');
 
     return new WP_REST_Response([
         'status' => 'success',

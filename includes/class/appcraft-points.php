@@ -54,12 +54,12 @@ function do_daily_points_reset() {
 
 function appcraft_manage_points($user_id, $points, $event, $operation = 'add', $article_id = null, $bypass_daily_limit = false) {
     if (!acquire_lock('appcraft_manage_points_lock')) {
-        return new WP_Error('cannot_obtain_lock', __('Operation too frequent, please try again later.', 'app-craft'), array('status' => 400));
+        return new WP_Error('cannot_obtain_lock', __('Operation too frequent, please try again later.', 'wp-app-craft'), array('status' => 400));
     }
     
     // Check if points are negative
     if ($points < 0) {
-        return new WP_Error('negative_points', __('Points cannot be negative, please provide a positive points value.', 'app-craft'), array('status' => 400));
+        return new WP_Error('negative_points', __('Points cannot be negative, please provide a positive points value.', 'wp-app-craft'), array('status' => 400));
     }
     // 验证和获取当前用户积分
     $current_points = get_and_cache_user_points($user_id);
@@ -95,7 +95,7 @@ function perform_points_operation($user_id, $current_points, $points_to_add, $op
     $today_earned_points = get_and_cache_user_points($user_id, 'today_earned_points');
 
     if ($operation == 'subtract' && ($current_points - $points_to_add < 0)) {
-        return new WP_Error('insufficient_points', sprintf(__('您的积分不足，当前账号积分为 %s 分，%s所需积分为 %s 分。', 'app-craft'), $current_points, $event, $points), array('status' => 400));
+        return new WP_Error('insufficient_points', sprintf(__('您的积分不足，当前账号积分为 %s 分，%s所需积分为 %s 分。', 'wp-app-craft'), $current_points, $event, $points), array('status' => 400));
     }
 
     if (!$bypass_daily_limit && $operation == 'add' && ($today_earned_points + $points_to_add > $daily_limit)) {
