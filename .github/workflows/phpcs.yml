@@ -1,9 +1,11 @@
 name: PHPCS check
+
 on:
-  push
-  pull_request:
-  # Allow manually triggering the workflow.
-  workflow_dispatch:
+  - push
+  - pull_request:
+
+# Allow manually triggering the workflow.
+workflow_dispatch:
 
 # Cancel all previous workflow runs for the same branch that have not yet completed.
 concurrency:
