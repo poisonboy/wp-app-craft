@@ -1,14 +1,18 @@
 <?php
-use Carbon_Fields\Container;
-use Carbon_Fields\Field; 
+defined('ABSPATH') or die('Direct file access not allowed');
 
-function appcraft_add_article_fields() {
+use Carbon_Fields\Container;
+use Carbon_Fields\Field;
+
+function appcraft_add_article_fields()
+{
     Container::make('post_meta', __('More Settings', 'wp-app-craft'))
-        ->where('post_type', '=', 'post')   
-        ->set_priority('high')   
+        ->where('post_type', '=', 'post')
+        ->set_priority('high')
         ->add_fields(array(
             Field::make('select', 'appcraft_read_type', __('Reading Type', 'wp-app-craft'))
                 ->set_options(array(
+                    'none' => __('Select Reading Type', 'wp-app-craft'),
                     'reward' => __('Reward', 'wp-app-craft'),
                     'pay' => __('Pay', 'wp-app-craft'),
                 ))
@@ -25,7 +29,7 @@ function appcraft_add_article_fields() {
                         'compare' => '=',
                     ),
                 )),
-                
+
             Field::make('text', 'appcraft_pay_points', __('Deduct Points', 'wp-app-craft'))
                 ->set_attribute('type', 'number')
                 ->set_width(50)

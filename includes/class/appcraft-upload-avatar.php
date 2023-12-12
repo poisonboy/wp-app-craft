@@ -1,9 +1,12 @@
 <?php
+defined('ABSPATH') or die('Direct file access not allowed');
+
+
 
 function appcraft_upload_user_avatar(WP_REST_Request $request)
 {
 
-  $user_id = verify_user_token($request);
+  $user_id = appcraft_verify_user_token($request);
   $upload_count = carbon_get_user_meta($user_id, 'appcraft_upload_count');
 
   if ($upload_count <= 0) {
@@ -18,9 +21,9 @@ function appcraft_upload_user_avatar(WP_REST_Request $request)
 
   $avatar = $_FILES['avatar'];
 
-  $file_type = mime_content_type($avatar['tmp_name']);
+  $file_type = wp_check_filetype_and_ext($avatar['tmp_name'], $avatar['name']);
   $allowed_types = array('image/jpeg', 'image/png', 'image/gif');
-  if (!in_array($file_type, $allowed_types)) {
+  if (!in_array($file_type['type'], $allowed_types)) {
     return wp_send_json_error(__('File type not allowed', 'wp-app-craft'));
   }
 
@@ -54,7 +57,7 @@ function appcraft_upload_user_avatar(WP_REST_Request $request)
     return wp_send_json_error($movefile['error']);
   }
 }
-function validateAndGetAvatar($data)
+function appcraft_validateAndGetAvatar($data)
 {
   if (!isset($data['avatar'])) {
     return wp_send_json_error(__('Avatar not provided', 'wp-app-craft'));

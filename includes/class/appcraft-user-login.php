@@ -1,4 +1,7 @@
 <?php
+defined('ABSPATH') or die('Direct file access not allowed');
+
+
 
 use Firebase\JWT\JWT;
 
@@ -8,76 +11,128 @@ function appcraft_login_user($request)
     $failed_attempts = get_transient('failed_login_attempts_' . $ip_address) ?: 0;
 
     if ($failed_attempts >= 5) {
-        return new WP_REST_Response(array('status' => 'error', 'message' => __('Too many login attempts, please try again later.', 'wp-app-craft')), 429);
+        return new WP_REST_Response(['status' => 'error', 'message' => __('Too many login attempts, please try again later.', 'wp-app-craft')], 429);
     }
-    
+    $openid = sanitize_text_field($request['openid']);
+    $login_type = sanitize_key($request['login_type']);
+    $user = null;
+    // error_log(' 登录类型：' . $login_type);
+    // error_log(' 登录openid：' . $openid);
+    switch ($login_type) {
 
-    $login_type = $request['login_type']; // 获取登录类型：'password' 或 'email_code'
-    $username_or_email = $request['username'];
-    $password = $request['password'];
+        case 'email_code':
+            $user = appcraft_handle_email_code_login($request);
+            break;
+
+        case 'phone_code':
+            $user = appcraft_handle_phone_code_login($request);
+            break;
+        case 'openid':
+            $user = appcraft_handle_openid_login($request);
+            break;
+        default:
+            $user = appcraft_handle_password_login($request);
+            break;
+    }
+
+
+    if ($user && !is_wp_error($user)) {
+        return appcraft_finalize_login($user);
+    } else {
+        return new WP_REST_Response(['status' => 'error', 'message' => __('Login failed', 'wp-app-craft')], 400);
+    }
+}
+// 邮箱登录
+function appcraft_handle_email_code_login($request)
+{
     $email = $request['email'];
     $email_code = $request['email_code'];
+    $stored_code = get_transient("email_code_" . $email);
 
-    $user = username_exists($username_or_email) ? get_user_by('login', $username_or_email) : get_user_by('email', $username_or_email);
-
-    if ($login_type === 'email_code') {
-        $stored_code = get_transient("email_code_" . $email);
-        if (!$stored_code) {
-            return new WP_REST_Response(['status' => 'error', 'message' => __('Verification code has expired', 'wp-app-craft')], 400);
-        }
-        if ($stored_code !== $email_code) {
-            return new WP_REST_Response(['status' => 'error', 'message' => __('Incorrect verification code', 'wp-app-craft')], 400);
-        }
-        // Clear the verification code
-        delete_transient("email_code_" . $email);
-        $user = get_user_by('email', $email);
-    } else {
-        if (!$user) {
-            return new WP_REST_Response(array('status' => 'error', 'message' => __('Username or email address does not exist', 'wp-app-craft')), 400);
-        }
-        // Validate password
-        if (!wp_check_password($password, $user->data->user_pass, $user->ID)) {
-            return new WP_REST_Response(array('status' => 'error', 'message' => __('Incorrect password', 'wp-app-craft')), 400);
-        }
+    if (!$stored_code || $stored_code !== $email_code) {
+        return new WP_Error('verification_failed', __('Incorrect or expired verification code', 'wp-app-craft'));
     }
 
+    delete_transient("email_code_" . $email);
+    return get_user_by('email', $email);
+}
+// 手机号登录
+function appcraft_handle_phone_code_login($request)
+{
+    $phone_code = $request['phone_code'];
+    $phoneInfo = appcraft_get_phone_number_from_wechat($phone_code);
+    // error_log("User phoneInfo " . $phoneInfo['phoneNumber']);
+    if (is_wp_error($phoneInfo)) {
+        return $phoneInfo;
+    }
 
-    // 如果到这里，登录验证成功
-    delete_transient('failed_login_attempts_' . $ip_address);
+    return appcraft_get_or_create_user_by_phone($phoneInfo['phoneNumber']);
+}
 
+// 密码登录
+function appcraft_handle_password_login($request)
+{
+    $username_or_email = $request['username'];
+    $password = $request['password'];
+    $user = username_exists($username_or_email) ? get_user_by('login', $username_or_email) : get_user_by('email', $username_or_email);
+
+    if (!$user || !wp_check_password($password, $user->data->user_pass, $user->ID)) {
+        return new WP_Error('login_failed', __('Incorrect username, email, or password', 'wp-app-craft'));
+    }
+
+    return $user;
+}
+// 微信登录
+function appcraft_handle_openid_login($request)
+{
+    $openid = $request['openid'];
+    // error_log('openid：' . $openid);
+
+    if (!$openid) {
+        return new WP_Error('missing_openid', __('Missing OpenID', 'wp-app-craft'));
+    }
+
+    $user = appcraft_get_user_by_openid($openid);
+    if (!$user) {
+        // 处理用户不存在的情况
+        return new WP_Error('user_not_found', __('User not found', 'wp-app-craft'));
+    }
+
+    return $user;
+}
+
+
+// 共用登录
+function appcraft_finalize_login($user)
+{
+    delete_transient('failed_login_attempts_' . $_SERVER['REMOTE_ADDR']);
     $expiration_hours = carbon_get_theme_option('appcraft_jwt_expiration') ?: 24;
     $key = carbon_get_theme_option('appcraft_jwt_secret_key');
-    $payload = array(
+    $payload = [
         "user_id" => $user->ID,
         "exp" => time() + ($expiration_hours * 60 * 60)
-    );
+    ];
 
     $token = JWT::encode($payload, $key, 'HS256');
     $nonce = wp_create_nonce('create_comment');
 
-    // 创建一个新的WP_REST_Request对象，设置必要的头部以携带token
     $profile_request = new WP_REST_Request();
     $profile_request->set_header('Authorization', $token);
-
-    // 调用appcraft_get_user_profile函数以获取用户资料
     $profile_response = appcraft_get_user_profile($profile_request);
 
-    // 检查appcraft_get_user_profile的响应是否有效
     if (is_wp_error($profile_response)) {
         return $profile_response;
     }
 
-    // 从appcraft_get_user_profile的响应中提取用户资料
     $profile_data = $profile_response->get_data();
 
-    // 合并token, nonce和用户资料到最终的响应中
-    $response_data = array(
+    $response_data = [
         "code" => "200",
         "message" => "success",
         "token" => $token,
         'nonce' => $nonce,
         "data" => array_merge(
-            array(
+            [
                 'id' => $user->ID,
                 'userName' => $user->user_login,
                 'nickname' => $user->nickname,
@@ -85,10 +140,10 @@ function appcraft_login_user($request)
                 'email' => $user->user_email,
                 'roleId' => $user->roles[0],
                 'roleName' => appcraft_translate_user_role($user->roles[0]),
-            ),
+            ],
             $profile_data['data']
         )
-    );
+    ];
 
     return new WP_REST_Response($response_data, 200);
 }

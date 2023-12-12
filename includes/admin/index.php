@@ -8,7 +8,9 @@ function appcraft_create_menu()
         'manage_options', // 权限
         'appcraftbuilder', // 菜单slug
         'appcraft_settings_page', // 显示页面的函数
-        plugins_url('wp-app-craft/assets/images/app.svg'), // 图标URL
+        'dashicons-admin-generic', // 菜单图标
+        50 // 排序
+
 
     );
 }
@@ -118,35 +120,37 @@ function appcraft_settings_page()
     <div class="panel ">
 
         <div class="title">
-            <h2 class="panel-title"><?php echo __('AppCraft', 'wp-app-craft'); ?> </h2>
+            <h2 class="panel-title"><?php echo esc_html__('AppCraft', 'wp-app-craft'); ?> </h2>
             <p class="panel-description">
-                <?php echo __('AppCraft', 'wp-app-craft'); ?><?php echo __(' plugin has been installed. You can start using it now. Next, you can do some basic settings and advanced settings, then download the front-end source code for integration. Please refer to', 'wp-app-craft'); ?>
-                <a href="https://github.com/poisonboy/wp-app-craft/wiki" target="_blank"><?php echo __('AppCraft', 'wp-app-craft'); ?> </a> <?php echo __('Documentation', 'wp-app-craft'); ?><?php echo __('for detailed operations', 'wp-app-craft'); ?>.
+                <?php echo esc_html__('AppCraft', 'wp-app-craft'); ?><?php echo esc_html__(' plugin has been installed. You can start using it now. Next, you can do some basic settings and advanced settings, then download the front-end source code for integration. Please refer to', 'wp-app-craft'); ?>
+                <a href="https://github.com/poisonboy/wp-app-craft/wiki" target="_blank"><?php echo esc_html__('AppCraft', 'wp-app-craft'); ?> </a> <?php echo esc_html__('Documentation', 'wp-app-craft'); ?><?php echo esc_html__('for detailed operations', 'wp-app-craft'); ?>.
             </p>
         </div>
 
         <div class="panel-details">
 
             <div class="panel-detail image">
-                <figure> <img src="/wp-content/plugins/wp-app-craft/assets/images/screenshot.png"> </figure>
+                <figure>
+                    <img src="<?php echo esc_url(plugins_url('assets/images/screenshot.png', dirname(__FILE__, 2))); ?>">
+                </figure>
             </div>
 
             <div class="panel-detail general">
                 <div class="general-info">
                     <h2 class="general-title title"><span class="dashicons dashicons-thumbs-up"></span>
-                        <?php echo __('AppCraft', 'wp-app-craft'); ?>
+                        <?php echo esc_html__('AppCraft', 'wp-app-craft'); ?>
                     </h2>
                     <div class="general-content content">
-                        <?php echo __('AppCraft', 'wp-app-craft'); ?> <?php echo __('Can seamlessly integrate WordPress with appcraft. It allows WordPress site owners to generate their own mini programs and APPs without hiring technical personnel, learning programming skills, or paying fees.', 'wp-app-craft'); ?>
+                        <?php echo esc_html__('AppCraft', 'wp-app-craft'); ?> <?php echo esc_html__('Can seamlessly integrate WordPress with appcraft. It allows WordPress site owners to generate their own mini programs and APPs without hiring technical personnel, learning programming skills, or paying fees.', 'wp-app-craft'); ?>
 
                     </div>
                     <div class="general-info-links">
                         <div class="buttons">
                             <a class=" button button-hero  button-primary" href="https://github.com/poisonboy/wp-app-craft/wiki">
-                                <?php echo __('View Documentation', 'wp-app-craft'); ?>
+                                <?php echo esc_html__('View Documentation', 'wp-app-craft'); ?>
                             </a>
                             <a class="button button-hero" href="https://github.com/poisonboy/wp-app-craft">
-                                <?php echo __('Download Source Code', 'wp-app-craft'); ?>
+                                <?php echo esc_html__('Download Source Code', 'wp-app-craft'); ?>
                             </a>
                         </div>
 
@@ -158,23 +162,23 @@ function appcraft_settings_page()
                 <div>
                     <div class="demo">
                         <h2 class="  title"><span class="dashicons dashicons-carrot "></span>
-                            <?php echo __('Case Studies', 'wp-app-craft'); ?></h2>
+                            <?php echo esc_html__('Case Studies', 'wp-app-craft'); ?></h2>
                         <div class="  content">
-                            <?php echo __('If you generate mini programs or APPs using this plugin, you can submit them to us as case studies for display.', 'wp-app-craft'); ?>
+                            <?php echo esc_html__('If you generate mini programs or APPs using this plugin, you can submit them to us as case studies for display.', 'wp-app-craft'); ?>
                             <a target="_blank" href="https://github.com/poisonboy/wp-app-craft/wiki/demos">
-                                <?php echo __('View Now', 'wp-app-craft'); ?>
+                                <?php echo esc_html__('View Now', 'wp-app-craft'); ?>
                             </a>
                         </div>
                     </div>
 
                     <div class="document">
                         <h2 class="  title"><span class="dashicons dashicons-coffee"></span>
-                            <?php echo __('Documentation', 'wp-app-craft'); ?>
+                            <?php echo esc_html__('Documentation', 'wp-app-craft'); ?>
                         </h2>
                         <div class="  content">
-                            <?php echo __('You can follow the documentation step-by-step without any coding knowledge. It takes about an hour to go from installing the plugin to generating the app.。', 'wp-app-craft'); ?>
+                            <?php echo esc_html__('You can follow the documentation step-by-step without any coding knowledge. It takes about an hour to go from installing the plugin to generating the app.。', 'wp-app-craft'); ?>
                             <a target="_blank" href="https://github.com/poisonboy/wp-app-craft/wiki">
-                                <?php echo __('View Documentation', 'wp-app-craft'); ?>
+                                <?php echo esc_html__('View Documentation', 'wp-app-craft'); ?>
                             </a>
                         </div>
                     </div>

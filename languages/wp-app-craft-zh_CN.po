@@ -1,20 +1,19 @@
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Plugins - WordPress To appcraft - Stable (latest release)"
 "\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-12 09:18+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: \n"
-"Language: \n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"POT-Creation-Date: 2023-11-21 11:26+0000\n"
+"PO-Revision-Date: 2023-12-12 09:25+0000\n"
+"Last-Translator: \n"
+"Language-Team: 简体中文\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.6.4; wp-6.2.2\n"
+"X-Loco-Version: 2.6.6; wp-6.4.1\n"
 "X-Domain: wp-app-craft"
 
 #: includes/admin/index.php:125
@@ -22,35 +21,35 @@ msgid ""
 " plugin has been installed. You can start using it now. Next, you can do "
 "some basic settings and advanced settings, then download the front-end "
 "source code for integration. Please refer to"
-msgstr ""
+msgstr "插件已安装 。 你可以开始使用它了。 下一步,您可以做一些基本设置和高级设置,然后下载前端源代码进行整合。 请参见"
 
 #: includes/class/appcraft-user-sign.php:48
 msgid "7-day consecutive check-in reward"
-msgstr ""
+msgstr "连续7天签到奖励"
 
 #: includes/class/appcraft-user-log.php:131
 msgid "[Deleted User]"
-msgstr ""
+msgstr "删除用户"
 
 #: includes/admin/points.php:63
 msgid "[User Deleted]"
-msgstr ""
+msgstr "用户已删除"
 
 #: includes/class/appcraft-user-management.php:112
 msgid "Account deleted"
-msgstr ""
+msgstr "注销账户"
 
 #: includes/class/appcraft-comments.php:28
 msgid "ago"
-msgstr ""
+msgstr "前"
 
 #: includes/class/appcraft-user-sign.php:28
 msgid "Already checked in today"
-msgstr ""
+msgstr "今日已签到"
 
 #: includes/fields/extension-settings.php:109
 msgid "APP Page"
-msgstr ""
+msgstr "程序页面"
 
 #. 页面标题
 #: includes/admin/index.php:6 includes/admin/index.php:7
@@ -58,107 +57,107 @@ msgstr ""
 #: includes/admin/index.php:126 includes/admin/index.php:141
 #: includes/admin/index.php:144
 msgid "AppCraft"
-msgstr ""
+msgstr "AppCraft"
 
 #. Name of the plugin
 msgid "AppCraft - WordPress to Uniapp  Integrator"
-msgstr ""
+msgstr "Appcrap - WordPress生成UniApp"
 
 #. Description of the plugin
 msgid ""
 "AppCraft seamlessly integrates WordPress with Uniapp , enabling the swift "
 "creation of mobile applications directly from your WordPress content."
-msgstr ""
+msgstr "将Wordpress 作为后台生成 Uniapp 多端应用,一键同步 Wordpress 内容到多端设备。"
 
 #: includes/admin/points.php:108
 msgid "appcraft User Points Records"
-msgstr ""
+msgstr "用户积分记录"
 
 #: includes/fields/basic-settings.php:47 includes/fields/basic-settings.php:52
 #: includes/fields/basic-settings.php:57
 msgid "AppID"
-msgstr ""
+msgstr "AppID"
 
 #: includes/fields/basic-settings.php:19
 msgid "Application"
-msgstr ""
+msgstr "应用"
 
 #: includes/fields/basic-settings.php:34
 msgid "Application Default Avatar"
-msgstr ""
+msgstr "应用默认头像"
 
 #: includes/fields/basic-settings.php:33
 msgid "Application Default Thumb"
-msgstr ""
+msgstr "应用默认缩略图"
 
 #: includes/fields/basic-settings.php:30
 msgid "Application Icon"
-msgstr ""
+msgstr "应用图标"
 
 #: includes/fields/basic-settings.php:21
 msgid "Application Introduction"
-msgstr ""
+msgstr "应用简介"
 
 #: includes/fields/basic-settings.php:31
 msgid "Application Logo"
-msgstr ""
+msgstr "应用logo"
 
 #: includes/fields/basic-settings.php:20
 msgid "Application Name"
-msgstr ""
+msgstr "应用名称"
 
 #: includes/fields/basic-settings.php:32
 msgid "Application Share Cover"
-msgstr ""
+msgstr "应用分享封面图"
 
 #: includes/admin/points.php:130
 msgid "Apply"
-msgstr ""
+msgstr "应用"
 
 #: includes/admin/points.php:127
 msgid "Ascending"
-msgstr ""
+msgstr "升序"
 
 #: includes/fields/user.php:16
 msgid "Avatar"
-msgstr ""
+msgstr "头像"
 
 #: includes/class/appcraft-upload-avatar.php:19
 #: includes/class/appcraft-upload-avatar.php:63
 msgid "Avatar not provided"
-msgstr ""
+msgstr "未提供头像"
 
 #: includes/fields/user.php:21
 msgid "Avatar Upload Count"
-msgstr ""
+msgstr "头像上传次数"
 
 #: includes/class/appcraft-upload-avatar.php:13
 msgid "Avatar upload limit reached"
-msgstr ""
+msgstr "达到 头像上传次数限制"
 
 #: includes/class/appcraft-upload-avatar.php:43
 msgid "Avatar uploaded successfully"
-msgstr ""
+msgstr "头像成功上传"
 
 #: includes/fields/extension-settings.php:87
 msgid "Background Color"
-msgstr ""
+msgstr "背景颜色"
 
 #: includes/fields/basic-settings.php:15
 msgid "Basic Settings"
-msgstr ""
+msgstr "基本设置"
 
 #: includes/fields/extension-settings.php:35
 msgid "Before Title"
-msgstr ""
+msgstr "标题前"
 
 #: includes/fields/user.php:19
 msgid "Bio"
-msgstr ""
+msgstr "个性签名"
 
 #: includes/fields/extension-settings.php:90
 msgid "Button Text"
-msgstr ""
+msgstr "按钮文字"
 
 #: includes/admin/index.php:144
 msgid ""
@@ -166,500 +165,502 @@ msgid ""
 "owners to generate their own mini programs and APPs without hiring technical "
 "personnel, learning programming skills, or paying fees."
 msgstr ""
+"可以将 WordPress 与 appcraft "
+"无缝集成。它允许WordPress网站所有者生成自己的小程序和APP，而无需聘请技术人员、学习编程技能或支付费用。"
 
 #: includes/fields/extension-settings.php:18
 #: includes/fields/extension-settings.php:19
 msgid "Carousel"
-msgstr ""
+msgstr "轮播图"
 
 #: includes/admin/index.php:165
 msgid "Case Studies"
-msgstr ""
+msgstr "案例演示"
 
 #: includes/class/appcraft-ids.php:11
 msgid "Categories"
-msgstr ""
+msgstr "分类"
 
 #: includes/fields/basic-settings.php:41
 msgid "Categories Page Categories"
-msgstr ""
+msgstr "分类页面显示的分类id"
 
 #: includes/fields/extension-settings.php:104
 msgid "Category"
-msgstr ""
+msgstr "分类"
 
 #: includes/class/appcraft-ids.php:60
 msgid "Category ID"
-msgstr ""
+msgstr "分类ID"
 
 #: includes/fields/category.php:11
 msgid "Category Image"
-msgstr ""
+msgstr "分类图片"
 
 #: includes/class/appcraft-user-sign.php:18
 #: includes/class/appcraft-user-sign.php:55
 msgid "Check-in successful"
-msgstr ""
+msgstr "签到成功"
 
 #: includes/class/appcraft-posts-fav.php:24
 msgid "Collection successful"
-msgstr ""
+msgstr "收藏成功"
 
 #: includes/class/appcraft-comment-create.php:61
 msgid "Comment submitted successfully"
-msgstr ""
+msgstr "评论提交成功"
 
 #: includes/class/appcraft-comment-create.php:60
 msgid "Comment submitted successfully, will be visible after admin approval"
-msgstr ""
+msgstr "评论提交成功，管理员审核通过后可见"
 
 #: includes/fields/basic-settings.php:97
 msgid "Comment Time Limit (minutes)"
-msgstr ""
+msgstr "评论间隔（分钟）"
 
 #: includes/class/appcraft-comment-create.php:35
 msgid "Commenting too frequently, please try again later"
-msgstr ""
+msgstr "评论过于频繁，请稍后再试"
 
 #: includes/class/appcraft-user-management.php:80
 msgid "Confirm Account Deletion"
-msgstr ""
+msgstr "确认注销帐户"
 
 #: includes/class/appcraft-user-management.php:85
 msgid "Confirmation email sent, please check your inbox."
-msgstr ""
+msgstr "确认邮件已发送，请检查您的收件箱。"
 
 #: includes/fields/basic-settings.php:67
 msgid "Continuous Sign-in 7 Days Extra Reward Points"
-msgstr ""
+msgstr "连续签到7天额外奖励积分"
 
 #: includes/fields/extension-settings.php:108
 msgid "Copy"
-msgstr ""
+msgstr "复制"
 
 #: includes/fields/extension-settings.php:125
 msgid "Copy Text"
-msgstr ""
+msgstr "复制文本"
 
 #: includes/fields/basic-settings.php:24
 msgid "Copyright Statement"
-msgstr ""
+msgstr "版权声明"
 
 #: includes/fields/extension-settings.php:24
 msgid "Cover Image"
-msgstr ""
+msgstr "封面图片"
 
 #: includes/fields/basic-settings.php:62
 msgid "Credit Settings"
-msgstr ""
+msgstr "积分设置"
 
 #: includes/fields/extension-settings.php:80
 #: includes/fields/extension-settings.php:81
 msgid "Credit Tasks"
-msgstr ""
+msgstr "积分任务"
 
 #: includes/fields/basic-settings.php:71
 msgid "Daily Points Limit"
-msgstr ""
+msgstr "每日积分限额"
 
 #: includes/class/appcraft-comments.php:14
 msgid "day"
-msgstr ""
+msgstr "天"
 
 #: includes/fields/post.php:33
 msgid "Deduct Points"
-msgstr ""
+msgstr "扣除积分"
 
 #: includes/admin/points.php:128
 msgid "Descending"
-msgstr ""
+msgstr "降序"
 
 #: includes/fields/extension-settings.php:89
 msgid "Description"
-msgstr ""
+msgstr "描述"
 
 #: includes/fields/basic-settings.php:39
 msgid "Display"
-msgstr ""
+msgstr "展示"
 
 #: includes/fields/basic-settings.php:27
 msgid ""
 "Display at the bottom of my page, can be copyright information, or terms of "
 "service and privacy policy links, support HTML rich text."
-msgstr ""
+msgstr "在我的页面底部显示，可以是版权信息，或者服务条款和隐私政策链接，支持HTML富文本。"
 
 #: includes/admin/index.php:126 includes/admin/index.php:176
 msgid "Documentation"
-msgstr ""
+msgstr "文档"
 
 #. Author of the plugin
 msgid "DomiUI"
-msgstr ""
+msgstr "DomiUI"
 
 #: includes/fields/basic-settings.php:51
 msgid "Douyin Mini Program"
-msgstr ""
+msgstr "抖音小程序"
 
 #: includes/admin/index.php:153
 msgid "Download Source Code"
-msgstr ""
+msgstr "下载源码"
 
 #: includes/class/appcraft-posts-read.php:50
 #, php-format
 msgid "Earned reward for reading article with ID %s"
-msgstr ""
+msgstr "阅读 ID 为 %s 的文章获得奖励"
 
 #: includes/class/appcraft-common.php:33
 #: includes/class/appcraft-user-register.php:131
 #: includes/class/appcraft-user-profile.php:84
 msgid "Email already registered"
-msgstr ""
+msgstr "邮箱已注册"
 
 #: includes/class/appcraft-common.php:40
 msgid "Email Verification Code"
-msgstr ""
+msgstr "邮箱验证码"
 
 #: includes/fields/basic-settings.php:95
 msgid "Enable Comment Moderation"
-msgstr ""
+msgstr "启用评论审核"
 
 #: includes/fields/basic-settings.php:105
 msgid "Enable Email Verify"
-msgstr ""
+msgstr "启用电子邮件验证"
 
 #: includes/fields/basic-settings.php:107
 msgid "Enable One-Click Registration"
-msgstr ""
+msgstr "开启一键注册"
 
 #: includes/fields/post.php:45
 msgid ""
 "Enter the paid content to be hidden. HTML code can be used to insert images "
 "and videos. It is recommended to use a 135 editor to edit the layout and "
 "style before copying the code."
-msgstr ""
+msgstr "输入要隐藏的付费内容。 HTML 代码可用于插入图像和视频。建议在复制代码之前使用135编辑器编辑布局和样式。"
 
 #: includes/admin/points.php:117
 msgid "Event:"
-msgstr ""
+msgstr "任务："
 
 #: includes/fields/extension-settings.php:15
 msgid "Extension Settings"
-msgstr ""
+msgstr "扩展设置"
 
 #: includes/class/appcraft-comment-create.php:53
 msgid "Failed to comment"
-msgstr ""
+msgstr "无法发表评论"
 
 #: includes/class/appcraft-user-management.php:87
 msgid "Failed to send email, please try again later."
-msgstr ""
+msgstr "发送电子邮件失败，请稍后重试。"
 
 #: includes/class/appcraft-common.php:47
 msgid "Failed to send verification code"
-msgstr ""
+msgstr "发送验证码失败"
 
 #: includes/fields/extension-settings.php:29
 #: includes/fields/extension-settings.php:30
 msgid "Featured Posts"
-msgstr ""
+msgstr "精选文章"
 
 #: includes/class/appcraft-upload-avatar.php:31
 msgid "File size exceeds limit"
-msgstr ""
+msgstr "文件大小超出限制"
 
 #: includes/class/appcraft-upload-avatar.php:27
 msgid "File type not allowed"
-msgstr ""
+msgstr "文件类型不允许"
 
 #: includes/admin/index.php:126
 msgid "for detailed operations"
-msgstr ""
+msgstr "详细操作"
 
 #: includes/fields/extension-settings.php:40
 #: includes/fields/extension-settings.php:41
 msgid "Grid Navigation"
-msgstr ""
+msgstr "宫格导航"
 
 #: includes/fields/basic-settings.php:40
 msgid "Homepage Categories"
-msgstr ""
+msgstr "主页显示的分类id"
 
 #: includes/class/appcraft-comments.php:15
 msgid "hour"
-msgstr ""
+msgstr "小时"
 
 #. Author URI of the plugin
 msgid "https://github.com/poisonboy/wp-app-craft"
-msgstr ""
+msgstr "https://github.com/poisonboy/wp-app-craft"
 
 #: includes/fields/extension-settings.php:47
 #: includes/fields/extension-settings.php:59
 #: includes/fields/extension-settings.php:71
 msgid "I18nKey"
-msgstr ""
+msgstr "I18nKey"
 
 #: includes/fields/extension-settings.php:46
 #: includes/fields/extension-settings.php:61
 #: includes/fields/extension-settings.php:73
 #: includes/fields/extension-settings.php:86
 msgid "Icon"
-msgstr ""
+msgstr "图标"
 
 #: includes/fields/extension-settings.php:62
 #: includes/fields/extension-settings.php:74
 msgid "Icon Color"
-msgstr ""
+msgstr "图标颜色"
 
 #: includes/fields/extension-settings.php:134
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #: includes/admin/index.php:167
 msgid ""
 "If you generate mini programs or APPs using this plugin, you can submit them "
 "to us as case studies for display."
-msgstr ""
+msgstr "如果您使用该插件生成小程序或APP，您可以将其作为案例提交给我们展示。"
 
 #: includes/class/appcraft-common.php:28
 msgid "Incorrect email format"
-msgstr ""
+msgstr "电子邮件格式不正确"
 
 #: includes/class/appcraft-user-login.php:53
 msgid "Incorrect or expired verification code"
-msgstr ""
+msgstr "验证码不正确或已过期"
 
 #: includes/class/appcraft-upload-avatar.php:68
 msgid "Incorrect parameters"
-msgstr ""
+msgstr "参数错误"
 
 #: includes/class/appcraft-user-login.php:80
 msgid "Incorrect username, email, or password"
-msgstr ""
+msgstr "用户名、邮箱或密码不正确"
 
 #: includes/class/appcraft-user-register.php:146
 #: includes/class/appcraft-user-profile.php:89
 #: includes/class/appcraft-user-management.php:52
 msgid "Incorrect verification code"
-msgstr ""
+msgstr "验证码不正确"
 
 #: includes/fields/basic-settings.php:63
 msgid "Initial Points"
-msgstr ""
+msgstr "初始积分"
 
 #: includes/class/appcraft-user-management.php:105
 msgid "Invalid or expired token"
-msgstr ""
+msgstr "令牌无效或过期"
 
 #: includes/class/appcraft-comment-create.php:22
 msgid "Invalid post ID"
-msgstr ""
+msgstr "帖子 ID 无效"
 
 #: includes/class/appcraft-posts-fav.php:11
 #: includes/class/appcraft-posts-fav.php:32
 msgid "Invalid request"
-msgstr ""
+msgstr "无效的请求"
 
 #: includes/class/appcraft-user-profile.php:27
 msgid "Invalid user ID"
-msgstr ""
+msgstr "无效的用户 Id"
 
 #: includes/fields/basic-settings.php:69
 msgid "Invitation Points"
-msgstr ""
+msgstr "邀请积分"
 
 #: includes/admin/points.php:144
 msgid "Invitations Count at Event"
-msgstr ""
+msgstr "邀请数"
 
 #: includes/class/appcraft-user-profile.php:138
 #, php-format
 msgid "Invited new user with ID %s"
-msgstr ""
+msgstr "已邀请 ID 为 %s 的新用户"
 
 #: includes/admin/points.php:141 includes/admin/userlist.php:11
 msgid "Inviter ID"
-msgstr ""
+msgstr "邀请人ID"
 
 #: includes/class/appcraft-user-register.php:42
 msgid "Inviter ID does not exist"
-msgstr ""
+msgstr "邀请人ID不存在"
 
 #: includes/admin/points.php:115
 msgid "Inviter ID:"
-msgstr ""
+msgstr "邀请人ID："
 
 #: includes/fields/basic-settings.php:11
 #: includes/fields/extension-settings.php:11
 msgid "Item"
-msgstr ""
+msgstr "项目"
 
 #: includes/fields/basic-settings.php:10
 #: includes/fields/extension-settings.php:10
 msgid "Items"
-msgstr ""
+msgstr "项目"
 
 #: includes/admin/points.php:165
 msgid "items"
-msgstr ""
+msgstr "项目"
 
 #: includes/class/appcraft-comments.php:28
 msgid "just now"
-msgstr ""
+msgstr "刚刚"
 
 #: includes/fields/basic-settings.php:79
 msgid "JWT Expiration Time (hours)"
-msgstr ""
+msgstr "JWT 过期时间（小时）"
 
 #: includes/fields/basic-settings.php:76
 msgid "JWT Secret Key"
-msgstr ""
+msgstr "JWT 密钥"
 
 #: includes/fields/extension-settings.php:107
 msgid "Link"
-msgstr ""
+msgstr "链接"
 
 #: includes/fields/extension-settings.php:100
 msgid "Link Type"
-msgstr ""
+msgstr "链接类型"
 
 #: includes/fields/extension-settings.php:112
 msgid "Link URL"
-msgstr ""
+msgstr "链接网址"
 
 #: includes/fields/basic-settings.php:44
 msgid "Login"
-msgstr ""
+msgstr "登录"
 
 #: includes/class/appcraft-user-login.php:42
 msgid "Login failed"
-msgstr ""
+msgstr "登录失败"
 
 #: includes/fields/basic-settings.php:101
 msgid "Max Comments Within Time Limit"
-msgstr ""
+msgstr "期限内最多评论数"
 
 #: includes/class/appcraft-comments.php:16
 msgid "minute"
-msgstr ""
+msgstr "分钟"
 
 #: includes/class/appcraft-user-profile.php:89
 msgid "Missing email verification code"
-msgstr ""
+msgstr "缺少电子邮件验证码"
 
 #: includes/class/appcraft-user-login.php:92
 msgid "Missing OpenID"
-msgstr ""
+msgstr "缺少 OpenID"
 
 #: includes/class/appcraft-user-register.php:110
 #, php-format
 msgid "Missing required field: %s"
-msgstr ""
+msgstr "缺少所需字段:% s"
 
 #: includes/admin/userlist.php:10
 msgid "Mobile"
-msgstr ""
+msgstr "手机号"
 
 #: includes/class/appcraft-comments.php:13
 msgid "month"
-msgstr ""
+msgstr "月"
 
 #: includes/fields/post.php:9
 msgid "More Settings"
-msgstr ""
+msgstr "更多设置"
 
 #: includes/fields/basic-settings.php:25
 msgid "MY Page Bottom"
-msgstr ""
+msgstr "我的页面底部"
 
 #: includes/fields/extension-settings.php:66
 msgid "My page List Menu"
-msgstr ""
+msgstr "我的页面列表菜单"
 
 #: includes/fields/extension-settings.php:53
 msgid "My page Menu"
-msgstr ""
+msgstr "我的页面菜单"
 
 #: includes/fields/extension-settings.php:54
 msgid "My page Two-Column Menu"
-msgstr ""
+msgstr "我的页面两栏菜单"
 
 #: includes/class/appcraft-user-profile.php:105
 msgid "New user registration"
-msgstr ""
+msgstr "新用户注册"
 
 #: includes/admin/userlist.php:7
 msgid "Nickname"
-msgstr ""
+msgstr "昵称"
 
 #: includes/admin/points.php:123
 msgid "Number of Invitations"
-msgstr ""
+msgstr "邀请数量"
 
 #: includes/class/appcraft-user-register.php:79
 msgid "One-click registration is disabled"
-msgstr ""
+msgstr "一键注册已禁止"
 
 #: includes/class/appcraft-points.php:71
 msgid "Operation too frequent, please try again later."
-msgstr ""
+msgstr "操作过于频繁，请稍后再试。"
 
 #: includes/admin/points.php:119
 msgid "Order By:"
-msgstr ""
+msgstr "排序方式："
 
 #: includes/admin/points.php:125
 msgid "Order Direction:"
-msgstr ""
+msgstr "排序方向："
 
 #: includes/fields/extension-settings.php:106
 msgid "Page"
-msgstr ""
+msgstr "页面"
 
 #: includes/class/appcraft-ids.php:43
 msgid "Page ID"
-msgstr ""
+msgstr "页面ID"
 
 #: includes/class/appcraft-pages.php:14
 msgid "Page not found"
-msgstr ""
+msgstr "找不到页面"
 
 #: includes/fields/post.php:44
 msgid "Paid Content"
-msgstr ""
+msgstr "付费内容"
 
 #: includes/class/appcraft-posts-read.php:19
 #, php-format
 msgid "Paid content for reading article with ID %s"
-msgstr ""
+msgstr "阅读 ID 为 %s 的文章的付费内容"
 
 #: includes/class/appcraft-user-register.php:136
 msgid "Password must be at least 6 characters"
-msgstr ""
+msgstr "密码必须至少6个字符"
 
 #: includes/class/appcraft-user-management.php:16
 msgid "Password must be at least 8 characters long"
-msgstr ""
+msgstr "密码长度必须至少为 8 个字符"
 
 #: includes/class/appcraft-user-management.php:21
 msgid "Password must contain at least one letter and one number"
-msgstr ""
+msgstr "密码必须至少包含一个字母和一个数字"
 
 #: includes/class/appcraft-user-management.php:27
 msgid "Password update failed"
-msgstr ""
+msgstr "密码更新失败"
 
 #: includes/class/appcraft-user-management.php:30
 msgid "Password updated"
-msgstr ""
+msgstr "密码已更新"
 
 #: includes/fields/post.php:17
 msgid "Pay"
-msgstr ""
+msgstr "支付"
 
 #: includes/class/appcraft-user-wxlogin.php:148
 #: includes/class/appcraft-user-wxlogin.php:178
 msgid "Phone number already registered"
-msgstr ""
+msgstr "手机号已注册"
 
 #: includes/fields/user.php:22
 msgid "Phone Update Count"
@@ -667,13 +668,13 @@ msgstr ""
 
 #: includes/class/appcraft-comment-create.php:27
 msgid "Please do not submit duplicate comments"
-msgstr ""
+msgstr "请不要提交重复的评论"
 
 #: includes/fields/post.php:23
 msgid ""
 "Please enter reward points, e.g., 10; for random, enter the reward points "
 "range, e.g., 1-10."
-msgstr ""
+msgstr "请输入奖励积分，例如10；对于随机，输入奖励积分范围，例如 1-10。"
 
 #: includes/class/appcraft-user-management.php:79
 msgid ""
@@ -685,293 +686,296 @@ msgid ""
 "Note: This action is irreversible. If you did not request account deletion, "
 "please ignore this email."
 msgstr ""
+"请使用与您的帐户关联的电子邮件进行回复，并注明要删除的帐户的 UID 和原因。我们将在收到电子邮件后锁定您的帐户，并在一周后永久删除所有信息。\n"
+"\n"
+"注意：此操作不可逆转。如果您没有请求删除帐户，请忽略这封电子邮件。"
 
 #: includes/class/appcraft-user-management.php:74
 msgid "Please wait 15 minutes before trying again"
-msgstr ""
+msgstr "请等待 15 分钟后再重试"
 
 #: includes/class/appcraft-points.php:76
 msgid "Points cannot be negative, please provide a positive points value."
-msgstr ""
+msgstr "积分不能为负值，请提供正值。"
 
 #: includes/class/appcraft-posts-read.php:30
 msgid "Points deduction successful, you can now read the article."
-msgstr ""
+msgstr "积分扣除成功，您现在可以阅读文章了。"
 
 #: includes/admin/points.php:121 includes/admin/points.php:140
 msgid "Points Earned"
-msgstr ""
+msgstr "获得积分"
 
 #: includes/admin/points.php:139
 msgid "Points Event"
-msgstr ""
+msgstr "积分活动"
 
 #: includes/admin/points.php:12
 msgid "Points Records"
-msgstr ""
+msgstr "积分记录"
 
 #: includes/class/appcraft-posts-read.php:60
 #, php-format
 msgid ""
 "Points reward successful, you have earned %s points, thank you for your "
 "reading."
-msgstr ""
+msgstr "积分奖励成功，您已获得%s积分，感谢您的阅读。"
 
 #: includes/fields/extension-settings.php:103
 msgid "Post"
-msgstr ""
+msgstr "文章"
 
 #: includes/class/appcraft-ids.php:10
 msgid "Post ID"
-msgstr ""
+msgstr "文章ID"
 
 #: includes/class/appcraft-comment-create.php:17
 msgid "Post ID and comment content cannot be empty"
-msgstr ""
+msgstr "文章ID和评论内容不能为空"
 
 #: includes/class/appcraft-posts.php:222
 msgid "Post not found"
-msgstr ""
+msgstr "找不到文章"
 
 #: includes/fields/basic-settings.php:23
 msgid "Privacy Policy"
-msgstr ""
+msgstr "隐私政策"
 
 #: includes/fields/user.php:20
 msgid "Profile Update Count"
-msgstr ""
+msgstr "资料更新次数"
 
 #: includes/class/appcraft-user-profile.php:123
 msgid "Profile updated successfully"
-msgstr ""
+msgstr "个人资料更新成功"
 
 #: includes/fields/basic-settings.php:42
 msgid "Rand Posts Categories"
-msgstr ""
+msgstr "随机帖子类别"
 
 #: includes/fields/post.php:13
 msgid "Reading Type"
-msgstr ""
+msgstr "阅读类型"
 
 #: includes/admin/points.php:131
 msgid "Reset"
-msgstr ""
+msgstr "重置"
 
 #: includes/fields/post.php:16
 msgid "Reward"
-msgstr ""
+msgstr "奖励"
 
 #: includes/fields/post.php:21
 msgid "Reward Points Range"
-msgstr ""
+msgstr "奖励积分范围"
 
 #: includes/fields/basic-settings.php:75
 msgid "Safe"
-msgstr ""
+msgstr "安全"
 
 #: includes/class/appcraft-comments.php:17
 msgid "second"
-msgstr ""
+msgstr "秒"
 
 #: includes/fields/basic-settings.php:48 includes/fields/basic-settings.php:53
 #: includes/fields/basic-settings.php:58
 msgid "Secret"
-msgstr ""
+msgstr "AppSecret"
 
 #: includes/fields/post.php:15
 msgid "Select Reading Type"
-msgstr ""
+msgstr "设置文章类型"
 
 #: includes/fields/basic-settings.php:65
 msgid "Sign-in Points"
-msgstr ""
+msgstr "签到积分"
 
 #: includes/fields/extension-settings.php:105
 msgid "Tag"
-msgstr ""
+msgstr "标签"
 
 #: includes/class/appcraft-ids.php:78
 msgid "Tag ID"
-msgstr ""
+msgstr "标签ID"
 
 #: includes/class/appcraft-tags.php:31
 msgid "Tag not found"
-msgstr ""
+msgstr "未找到标签"
 
 #: includes/class/appcraft-ids.php:12
 msgid "Tags"
-msgstr ""
+msgstr "标签"
 
 #: includes/fields/basic-settings.php:22
 msgid "Terms of Service"
-msgstr ""
+msgstr "服务条款"
 
 #: includes/fields/category.php:14
 msgid "Thumbnail Image"
-msgstr ""
+msgstr "缩略图"
 
 #: includes/admin/points.php:142
 msgid "Time"
-msgstr ""
+msgstr "时间"
 
 #: includes/fields/extension-settings.php:98
 msgid "Title"
-msgstr ""
+msgstr "标题"
 
 #: includes/class/appcraft-user-login.php:14
 msgid "Too many login attempts, please try again later."
-msgstr ""
+msgstr "登录尝试次数过多，请稍后再试。"
 
 #: includes/admin/userlist.php:9
 msgid "Total Points"
-msgstr ""
+msgstr "总积分"
 
 #: includes/admin/points.php:122 includes/admin/points.php:143
 msgid "Total Points at Event"
-msgstr ""
+msgstr "活动总积分"
 
 #: includes/class/appcraft-posts-fav.php:42
 msgid "Unfavorite successful"
-msgstr ""
+msgstr "取消收藏成功"
 
 #: includes/class/appcraft-user-register.php:85
 #: includes/class/appcraft-user-wxlogin.php:195
 msgid "Unknown User"
-msgstr ""
+msgstr "未知用户"
 
 #: includes/class/appcraft-user-profile.php:60
 msgid "Update limit reached"
-msgstr ""
+msgstr "已达到更新次数上限"
 
 #: includes/class/appcraft-user-sign.php:36
 msgid "User check-in"
-msgstr ""
+msgstr "用户签到"
 
 #: includes/admin/points.php:137 includes/admin/userlist.php:8
 msgid "User ID"
-msgstr ""
+msgstr "用户 ID"
 
 #: includes/admin/points.php:111
 msgid "User ID:"
-msgstr ""
+msgstr "用户 ID："
 
 #: includes/class/appcraft-verify.php:47
 #: includes/class/appcraft-user-login.php:98
 msgid "User not found"
-msgstr ""
+msgstr "未找到用户"
 
 #: includes/class/appcraft-verify.php:40
 msgid "User not logged in or token is invalid"
-msgstr ""
+msgstr "用户未登录或令牌无效"
 
 #: includes/admin/points.php:11
 msgid "User Records"
-msgstr ""
+msgstr "用户记录"
 
 #: includes/fields/user.php:14
 msgid "User Settings"
-msgstr ""
+msgstr "用户设置"
 
 #: includes/fields/basic-settings.php:91
 msgid "User Update Phone Times"
-msgstr ""
+msgstr "手机号更新次数"
 
 #: includes/fields/basic-settings.php:83
 msgid "User Update Profile Times"
-msgstr ""
+msgstr "用户更新个人资料时间"
 
 #: includes/fields/basic-settings.php:87
 msgid "User Upload Avartar Times"
-msgstr ""
+msgstr "用户上传头像次数"
 
 #: includes/class/appcraft-user-register.php:104
 msgid "userData not provided"
-msgstr ""
+msgstr "未提供用户数据"
 
 #: includes/admin/points.php:138
 msgid "Username"
-msgstr ""
+msgstr "用户名"
 
 #: includes/class/appcraft-user-register.php:127
 msgid "Username already exists"
-msgstr ""
+msgstr "此用户名已存在"
 
 #: includes/class/appcraft-user-register.php:124
 msgid "Username contains illegal characters"
-msgstr ""
+msgstr "用户名包含非法字符"
 
 #: includes/admin/points.php:113
 msgid "Username:"
-msgstr ""
+msgstr "用户名："
 
 #: includes/class/appcraft-common.php:40
 msgid "valid for 5 minutes"
-msgstr ""
+msgstr "5分钟内有效"
 
 #: includes/class/appcraft-user-register.php:143
 #: includes/class/appcraft-user-profile.php:89
 #: includes/class/appcraft-user-management.php:49
 msgid "Verification code has expired"
-msgstr ""
+msgstr "验证码已过期"
 
 #: includes/class/appcraft-common.php:44
 msgid "Verification code sent"
-msgstr ""
+msgstr "验证码已发送"
 
 #: includes/fields/basic-settings.php:110
 msgid "version（auto）"
-msgstr ""
+msgstr "版本（自动）"
 
 #: includes/admin/index.php:150 includes/admin/index.php:181
 msgid "View Documentation"
-msgstr ""
+msgstr "查看文档"
 
 #: includes/admin/index.php:169
 msgid "View Now"
-msgstr ""
+msgstr "现在查看"
 
 #: includes/fields/user.php:26
 msgid "VIP Expiry Date"
-msgstr ""
+msgstr "VIP 有效期"
 
 #: includes/fields/user.php:24
 msgid "VIP Level"
-msgstr ""
+msgstr "VIP 级别"
 
 #: includes/fields/basic-settings.php:46
 msgid "WeChat Mini Program"
-msgstr ""
+msgstr "微信小程序"
 
 #: includes/fields/basic-settings.php:56
 msgid "WeChat Open Platform"
-msgstr ""
+msgstr "微信开放平台"
 
 #: includes/class/appcraft-comments.php:12
 msgid "year"
-msgstr ""
+msgstr "年"
 
 #: includes/admin/index.php:179
 msgid ""
 "You can follow the documentation step-by-step without any coding knowledge. "
 "It takes about an hour to go from installing the plugin to generating the "
 "app.。"
-msgstr ""
+msgstr "您无需任何编码知识即可逐步遵循文档。从安装插件到生成app大约需要一个小时。"
 
 #: includes/class/appcraft-posts-read.php:47
 msgid "You have already earned the reward for this article."
-msgstr ""
+msgstr "本文已经获取过奖励。"
 
 #: includes/class/appcraft-posts-read.php:13
 msgid "You have already unlocked this content."
-msgstr ""
+msgstr "您已经解锁了该内容。"
 
 #: includes/class/appcraft-points.php:121
 #, php-format
 msgid ""
 "Your points are insufficient, your current account points are %s, and the "
 "points required for %s are %s."
-msgstr ""
+msgstr "您的积分不足，您当前账户积分为%s，%s所需积分为%s。"
 
 #: includes/class/appcraft-common.php:40
 msgid "Your verification code is:"
-msgstr ""
+msgstr "您的验证码是："

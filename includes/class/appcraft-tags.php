@@ -1,5 +1,8 @@
-<?php 
- 
+<?php
+defined('ABSPATH') or die('Direct file access not allowed');
+
+
+
 
 function appcraft_get_tags($request)
 {
@@ -16,7 +19,7 @@ function appcraft_get_tags($request)
         );
         $data[] = $tag_data;
     }
-    return create_response($data);
+    return appcraft_format_content($data);
 }
 
 function appcraft_get_tag($request)
@@ -37,5 +40,5 @@ function appcraft_get_tag($request)
         'cover' => wp_get_attachment_url(get_term_meta($tag->term_id, '_appcraft_cover_image', true)),
     );
 
-    return create_response($data);
+    return appcraft_format_content($data);
 }

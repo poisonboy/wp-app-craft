@@ -1,4 +1,6 @@
 <?php
+defined('ABSPATH') or die('Direct file access not allowed');
+
 
 
 
@@ -6,7 +8,7 @@
 // 修改密码
 function appcraft_update_password(WP_REST_Request $request)
 {
-    $user_id = verify_user_token($request);
+    $user_id = appcraft_verify_user_token($request);
     $new_password = $request->get_param('password');
 
     // Validate password length
@@ -36,7 +38,7 @@ function appcraft_update_password(WP_REST_Request $request)
 // 注销账号（发送确认邮件）
 function appcraft_send_delete_confirmation_email(WP_REST_Request $request)
 {
-    $user_id = verify_user_token($request);
+    $user_id = appcraft_verify_user_token($request);
     $email_code = $request['email_code'];
     $email = get_the_author_meta('user_email', $user_id);
     $timestamp = time();

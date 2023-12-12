@@ -1,6 +1,10 @@
 <?php
-function appcraft_signin_api($request) {
-   $user_id = verify_user_token($request);
+defined('ABSPATH') or die('Direct file access not allowed');
+
+
+function appcraft_signin_api($request)
+{
+    $user_id = appcraft_verify_user_token($request);
 
 
     // 运行签到逻辑
@@ -12,9 +16,9 @@ function appcraft_signin_api($request) {
     }
 
     return new WP_REST_Response(['message' => __('Check-in successful', 'wp-app-craft')], 200);
-
 }
-function appcraft_user_sign_in($user_id) {
+function appcraft_user_sign_in($user_id)
+{
     $today = date('Y-m-d');
     $last_signin_date = get_user_meta($user_id, 'last_signin_date', true);
     $consecutive_days = get_user_meta($user_id, 'consecutive_days', true) ?: 0;
@@ -29,7 +33,7 @@ function appcraft_user_sign_in($user_id) {
     $seven_day_bonus = carbon_get_theme_option('appcraft_signin_7day_points') ?: 0;
 
     // 管理积分
-    $result = appcraft_manage_points($user_id, $signin_points, __('User check-in', 'wp-app-craft'));
+    $result = appcraft_manage_points($user_id, $signin_points, __('User check-in', 'wp-app-craft'), 'add', AC_TYPE_CHECK_IN);
 
     if (is_wp_error($result)) {
         return $result;
@@ -41,7 +45,7 @@ function appcraft_user_sign_in($user_id) {
 
     // 检查是否达到连续7天
     if ($consecutive_days == 7) {
-        appcraft_manage_points($user_id, $seven_day_bonus, __('7-day consecutive check-in reward', 'wp-app-craft'));
+        appcraft_manage_points($user_id, $seven_day_bonus, __('7-day consecutive check-in reward', 'wp-app-craft'), 'add', AC_TYPE_CHECK_IN);
     } elseif ($consecutive_days > 7) {
         $consecutive_days = 1; // 第8天重置连续天数
     }

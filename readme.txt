@@ -2,9 +2,9 @@
 Contributors:domiui
 Tags: api, appbuilder, creatapp, appcraft, multi-platform, app
 Requires at least: 5.0
-Tested up to: 6.1
+Tested up to: 6.4
 Stable tag: 1.0.0
-Requires PHP: 7.0
+Requires PHP: 7.4
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -20,14 +20,18 @@ API集成: 插件提供了完整的API集合，支持各种WordPress功能，如
 灵活的设置: 插件提供了丰富的设置选项，可以根据需要调整应用的行为和外观。
 搜索与评论支持: 插件支持全站搜索和评论管理，为用户提供了完整的互动体验。
 
+## 多语言支持
+此插件支持英文和中文。我们采用 WordPress 的国际化标准，确保无论用户使用哪种语言，都能获得一致的体验。
+
 ## 安装使用
 1. 从WordPress应用市场下载AppCraft插件。
 2. 在WordPress后台的插件页面上上传并激活插件。
 3. 在AppCraft的设置页面上进行相关配置。
 4. 下载appcraft前端源码修改请求域名。
 5. 生成多端应用并进行必要的测试，发布您的应用。
+  
  
-
+ 
 == Changelog ==
 1.0.0
 初始发布。

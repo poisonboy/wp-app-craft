@@ -1,8 +1,9 @@
 <?php
+defined('ABSPATH') or die('Direct file access not allowed');
 
 use Carbon_Fields\Container;
 use Carbon_Fields\Field;
- 
+
 function appcraft_register_basic_fields()
 {
     $employees_labels = array(
@@ -10,7 +11,7 @@ function appcraft_register_basic_fields()
         'singular_name' => __('Item', 'wp-app-craft'),
     );
     // 创建基本设置子菜单
-     
+
     $basic_settings = Container::make('theme_options', __('Basic Settings', 'wp-app-craft'))
         ->set_page_parent('appcraftbuilder') // 设置父菜单的slug
         ->set_page_file('appcraft_basic_settings') //
@@ -33,25 +34,43 @@ function appcraft_register_basic_fields()
             Field::make('image', 'appcraft_app_default_avatar', __('Application Default Avatar', 'wp-app-craft'))->set_value_type('url'),
 
         ))
-        
-        
+
+
         ->add_tab(__('Display', 'wp-app-craft'), array(
             Field::make('text', 'appcraft_home_categories', __('Homepage Categories', 'wp-app-craft'))->set_classes('w-30'),
             Field::make('text', 'appcraft_cat_categories', __('Categories Page Categories', 'wp-app-craft'))->set_classes('w-30'),
             Field::make('text', 'appcraft_rand_categories', __('Rand Posts Categories', 'wp-app-craft'))->set_classes('w-30'),
         ))
+        ->add_tab(__('Login', 'wp-app-craft'), array(
+            Field::make('html', 'wxapp_title')
+                ->set_html('<h2>' . __('WeChat Mini Program', 'wp-app-craft') . '</h2>'),
+            Field::make('text', 'appcraft_wechat_appid', __('AppID', 'wp-app-craft'))->set_classes('w-30'),
+            Field::make('text', 'appcraft_wechat_secret', __('Secret', 'wp-app-craft'))->set_classes('w-30'),
+
+            Field::make('html', 'dyapp_title')
+                ->set_html('<h2>' . __('Douyin Mini Program', 'wp-app-craft') . '</h2>'),
+            Field::make('text', 'appcraft_douyin_appid', __('AppID', 'wp-app-craft'))->set_classes('w-30'),
+            Field::make('text', 'appcraft_douyin_secret', __('Secret', 'wp-app-craft'))->set_classes('w-30'),
+
+            Field::make('html', 'wxopen_title')
+                ->set_html('<h2>' . __('WeChat Open Platform', 'wp-app-craft') . '</h2>'),
+            Field::make('text', 'appcraft_wechatopen_appid', __('AppID', 'wp-app-craft'))->set_classes('w-30'),
+            Field::make('text', 'appcraft_wechatopen_secret', __('Secret', 'wp-app-craft'))->set_classes('w-30'),
+        ))
+
+
         ->add_tab(__('Credit Settings', 'wp-app-craft'), array(
-    Field::make('text', 'appcraft_initial_points', __('Initial Points', 'wp-app-craft'))
-        ->set_default_value('20'),
-    Field::make('text', 'appcraft_signin_points', __('Sign-in Points', 'wp-app-craft'))
-        ->set_default_value('5'),
-    Field::make('text', 'appcraft_signin_7day_points', __('Continuous Sign-in 7 Days Extra Reward Points', 'wp-app-craft'))
-        ->set_default_value('30'),
-    Field::make('text', 'appcraft_points_for_invitation', __('Invitation Points', 'wp-app-craft'))
-        ->set_default_value('10'),
-    Field::make('text', 'appcraft_daily_limit', __('Daily Points Limit', 'wp-app-craft'))
-        ->set_default_value('100'),
-))
+            Field::make('text', 'appcraft_initial_points', __('Initial Points', 'wp-app-craft'))
+                ->set_default_value('20'),
+            Field::make('text', 'appcraft_signin_points', __('Sign-in Points', 'wp-app-craft'))
+                ->set_default_value('5'),
+            Field::make('text', 'appcraft_signin_7day_points', __('Continuous Sign-in 7 Days Extra Reward Points', 'wp-app-craft'))
+                ->set_default_value('30'),
+            Field::make('text', 'appcraft_points_for_invitation', __('Invitation Points', 'wp-app-craft'))
+                ->set_default_value('10'),
+            Field::make('text', 'appcraft_daily_limit', __('Daily Points Limit', 'wp-app-craft'))
+                ->set_default_value('100'),
+        ))
 
         ->add_tab(__('Safe', 'wp-app-craft'), array(
             Field::make('text', 'appcraft_jwt_secret_key', __('JWT Secret Key', 'wp-app-craft'))
@@ -69,6 +88,10 @@ function appcraft_register_basic_fields()
                 ->set_classes('w-30')
                 ->set_attribute('type', 'number')
                 ->set_default_value(3),
+            Field::make('text', 'appcraft_updatephone_times', __('User Update Phone Times', 'wp-app-craft'))
+                ->set_classes('w-30')
+                ->set_attribute('type', 'number')
+                ->set_default_value(3),
             Field::make('checkbox', 'appcraft_comment_moderation', __('Enable Comment Moderation', 'wp-app-craft'))
                 ->set_default_value('yes'),
             Field::make('text', 'appcraft_comment_time_limit', __('Comment Time Limit (minutes)', 'wp-app-craft'))
@@ -79,21 +102,23 @@ function appcraft_register_basic_fields()
                 ->set_classes('w-30')
                 ->set_attribute('type', 'number')
                 ->set_default_value(5),
-           Field::make('checkbox', 'appcraft_email_verify', __('Enable Email Verify', 'wp-app-craft'))
+            Field::make('checkbox', 'appcraft_email_verify', __('Enable Email Verify', 'wp-app-craft'))
                 ->set_default_value('yes'),
-                 Field::make('text', 'appcraft_settings_version', __('version（auto）', 'wp-app-craft'))
-        ->set_default_value('0')->set_attribute('readOnly', 'readOnly'),  
-        ))
-      ;
-     
+            Field::make('checkbox', 'enable_one_click_registration', __('Enable One-Click Registration', 'wp-app-craft'))
+                ->set_default_value('yes')
+                ->set_width(15),
+            Field::make('text', 'appcraft_settings_version', __('version（auto）', 'wp-app-craft'))
+                ->set_default_value('0')->set_attribute('readOnly', 'readOnly'),
+        ));
 }
-add_action('carbon_fields_theme_options_container_saved', 'update_appcraft_settings_version');
+add_action('carbon_fields_theme_options_container_saved', 'appcraft_update_settings_version');
 
-function update_appcraft_settings_version() { 
+function appcraft_update_settings_version()
+{
     $current_version = carbon_get_theme_option('appcraft_settings_version');
     if (!$current_version) {
-        $current_version = 0;  
-    } 
-    $new_version = $current_version + 1; 
+        $current_version = 0;
+    }
+    $new_version = $current_version + 1;
     carbon_set_theme_option('appcraft_settings_version', $new_version);
 }

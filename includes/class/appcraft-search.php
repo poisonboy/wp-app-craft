@@ -1,6 +1,10 @@
-<?php 
- 
-function appcraft_search_posts(WP_REST_Request $request) {
+<?php
+defined('ABSPATH') or die('Direct file access not allowed');
+
+
+
+function appcraft_search_posts(WP_REST_Request $request)
+{
     // 获取搜索关键字和分页参数
     $keyword = $request->get_param('keyword');
     $page = $request->get_param('page') ?: 1;

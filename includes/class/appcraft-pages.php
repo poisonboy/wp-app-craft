@@ -1,7 +1,10 @@
-<?php 
- 
- 
- 
+<?php
+defined('ABSPATH') or die('Direct file access not allowed');
+
+
+
+
+
 function appcraft_get_page($request)
 {
     $id = (int) $request['id'];
@@ -20,5 +23,5 @@ function appcraft_get_page($request)
         'image' => appcraft_get_post_image($page->ID),
     );
 
-    return create_response($data);
+    return appcraft_format_content($data);
 }

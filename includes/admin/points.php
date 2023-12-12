@@ -1,8 +1,10 @@
 <?php
-add_action('admin_menu', 'add_appcraft_submenu', 99);
+defined('ABSPATH') or die('Direct file access not allowed');
+
+add_action('admin_menu', 'appcraft_add_submenu', 99);
 
 // 添加子菜单
-function add_appcraft_submenu()
+function appcraft_add_submenu()
 {
     add_submenu_page(
         'appcraftbuilder',
@@ -16,15 +18,15 @@ function add_appcraft_submenu()
 function appcraft_create_points_table()
 {
     global $wpdb;
-    $table_name = $wpdb->prefix . 'appcraft_points_log';
+    $table_name = sanitize_key($wpdb->prefix . 'appcraft_points_log');
 
     $charset_collate = $wpdb->get_charset_collate();
 
-    $sql = "CREATE TABLE $table_name (
+    $sql = "CREATE TABLE {$table_name} (
         id mediumint(9) NOT NULL AUTO_INCREMENT,
         user_id mediumint(9) NOT NULL,
-        username varchar(255) NOT NULL,
         event varchar(255) NOT NULL,
+        type varchar(100) NOT NULL,
         points_earned mediumint(9) NOT NULL,
         current_points mediumint(9) NOT NULL,
         inviter_count mediumint(9) NOT NULL,
@@ -55,14 +57,17 @@ function appcraft_build_points_query($table_name, $filter_user_id, $filter_usern
     return $sql;
 }
 
-function render_table_row($row)
+function appcraft_render_table_row($row)
 {
+    $user_info = get_userdata($row->user_id);
+    $username = $user_info ? $user_info->nickname : __('[User Deleted]', 'wp-app-craft');
+
     $inviter_id_display = $row->inviter_id > 0 ? $row->inviter_id : '';
     $inviter_count_display = $row->inviter_count > 0 ? $row->inviter_count : '';
 
     return "<tr>
         <td>{$row->user_id}</td>
-        <td>{$row->username}</td>
+        <td>{$username}</td>
         <td>{$row->event}</td>
         <td>{$row->points_earned}</td>
         <td>$inviter_id_display</td>
@@ -74,7 +79,7 @@ function render_table_row($row)
 function appcraft_display_user_records()
 {
     global $wpdb;
-    $table_name = $wpdb->prefix . 'appcraft_points_log';
+    $table_name = sanitize_key($wpdb->prefix . 'appcraft_points_log');
     // 分页参数
     $current_page = isset($_GET['paged']) ? max(1, intval($_GET['paged'])) : 1;
     $items_per_page = 20;
@@ -85,8 +90,8 @@ function appcraft_display_user_records()
     $filter_event = isset($_GET['filter_event']) ? sanitize_text_field($_GET['filter_event']) : '';
     $order_by = isset($_GET['order_by']) ? sanitize_text_field($_GET['order_by']) : 'id';
     $order_dir = isset($_GET['order_dir']) ? sanitize_text_field($_GET['order_dir']) : 'DESC';
-    // 总记录数查询
-    $total_items_sql = "SELECT COUNT(*) FROM $table_name";
+    // 总记录数查询，确保表名已被清理
+    $total_items_sql = "SELECT COUNT(*) FROM {$table_name}";
     // 添加筛选条件到 $total_items_sql 
     $total_items = $wpdb->get_var($total_items_sql);
     // 将参数传递给 appcraft_build_points_query
@@ -100,49 +105,49 @@ function appcraft_display_user_records()
     $results = $wpdb->get_results($sql);
 ?>
     <div class="wrap">
-        <h1><?php _e('appcraft User Points Records', 'wp-app-craft'); ?></h1>
-    <form method="GET" action="">
-        <input type="hidden" name="page" value="appcraft-user-records">
-        <label for="filter_user_id"><?php _e('User ID:', 'wp-app-craft'); ?></label>
-        <input type="text" name="filter_user_id" value="<?php echo $filter_user_id; ?>">
-        <label for="filter_username"><?php _e('Username:', 'wp-app-craft'); ?></label>
-        <input type="text" name="filter_username" value="<?php echo $filter_username; ?>">
-        <label for="filter_inviter_id"><?php _e('Inviter ID:', 'wp-app-craft'); ?></label>
-        <input type="text" name="filter_inviter_id" value="<?php echo $filter_inviter_id; ?>">
-        <label for="filter_event"><?php _e('Event:', 'wp-app-craft'); ?></label>
-        <input type="text" name="filter_event" value="<?php echo $filter_event; ?>">
-        <label for="order_by"><?php _e('Order By:', 'wp-app-craft'); ?></label>
-        <select name="order_by">
-            <option value="points_earned"><?php _e('Points Earned', 'wp-app-craft'); ?></option>
-            <option value="current_points"><?php _e('Total Points at Event', 'wp-app-craft'); ?></option>
-            <option value="inviter_count"><?php _e('Number of Invitations', 'wp-app-craft'); ?></option>
-        </select>
-        <label for="order_dir"><?php _e('Order Direction:', 'wp-app-craft'); ?></label>
-        <select name="order_dir">
-            <option value="ASC"><?php _e('Ascending', 'wp-app-craft'); ?></option>
-            <option value="DESC"><?php _e('Descending', 'wp-app-craft'); ?></option>
-        </select>
-        <input type="submit" value="<?php _e('Apply', 'wp-app-craft'); ?>">
-        <a href="?page=appcraft-user-records" class="button"><?php _e('Reset', 'wp-app-craft'); ?></a>
-    </form>
+        <h1><?php esc_html_e('appcraft User Points Records', 'wp-app-craft'); ?></h1>
+        <form method="GET" action="">
+            <input type="hidden" name="page" value="appcraft-user-records">
+            <label for="filter_user_id"><?php esc_html_e('User ID:', 'wp-app-craft'); ?></label>
+            <input type="text" name="filter_user_id" value="<?php echo $filter_user_id; ?>">
+            <label for="filter_username"><?php esc_html_e('Username:', 'wp-app-craft'); ?></label>
+            <input type="text" name="filter_username" value="<?php echo $filter_username; ?>">
+            <label for="filter_inviter_id"><?php esc_html_e('Inviter ID:', 'wp-app-craft'); ?></label>
+            <input type="text" name="filter_inviter_id" value="<?php echo $filter_inviter_id; ?>">
+            <label for="filter_event"><?php esc_html_e('Event:', 'wp-app-craft'); ?></label>
+            <input type="text" name="filter_event" value="<?php echo $filter_event; ?>">
+            <label for="order_by"><?php esc_html_e('Order By:', 'wp-app-craft'); ?></label>
+            <select name="order_by">
+                <option value="points_earned"><?php esc_html_e('Points Earned', 'wp-app-craft'); ?></option>
+                <option value="current_points"><?php esc_html_e('Total Points at Event', 'wp-app-craft'); ?></option>
+                <option value="inviter_count"><?php esc_html_e('Number of Invitations', 'wp-app-craft'); ?></option>
+            </select>
+            <label for="order_dir"><?php esc_html_e('Order Direction:', 'wp-app-craft'); ?></label>
+            <select name="order_dir">
+                <option value="ASC"><?php esc_html_e('Ascending', 'wp-app-craft'); ?></option>
+                <option value="DESC"><?php esc_html_e('Descending', 'wp-app-craft'); ?></option>
+            </select>
+            <input type="submit" value="<?php esc_html_e('Apply', 'wp-app-craft'); ?>">
+            <a href="?page=appcraft-user-records" class="button"><?php esc_html_e('Reset', 'wp-app-craft'); ?></a>
+        </form>
 
         <table class="wp-list-table widefat fixed striped" style=" margin: 6px 0;">
             <thead>
-            <tr>
-                <th><?php _e('User ID', 'wp-app-craft'); ?></th>
-                <th><?php _e('Username', 'wp-app-craft'); ?></th>
-                <th><?php _e('Points Event', 'wp-app-craft'); ?></th>
-                <th><?php _e('Points Earned', 'wp-app-craft'); ?></th>
-                <th><?php _e('Inviter ID', 'wp-app-craft'); ?></th>
-                <th><?php _e('Time', 'wp-app-craft'); ?></th>
-                <th><?php _e('Total Points at Event', 'wp-app-craft'); ?></th>
-                <th><?php _e('Invitations Count at Event', 'wp-app-craft'); ?></th>
-            </tr>
-        </thead>
+                <tr>
+                    <th><?php esc_html_e('User ID', 'wp-app-craft'); ?></th>
+                    <th><?php esc_html_e('Username', 'wp-app-craft'); ?></th>
+                    <th><?php esc_html_e('Points Event', 'wp-app-craft'); ?></th>
+                    <th><?php esc_html_e('Points Earned', 'wp-app-craft'); ?></th>
+                    <th><?php esc_html_e('Inviter ID', 'wp-app-craft'); ?></th>
+                    <th><?php esc_html_e('Time', 'wp-app-craft'); ?></th>
+                    <th><?php esc_html_e('Total Points at Event', 'wp-app-craft'); ?></th>
+                    <th><?php esc_html_e('Invitations Count at Event', 'wp-app-craft'); ?></th>
+                </tr>
+            </thead>
             <tbody>
                 <?php
                 foreach ($results as $row) {
-                    echo render_table_row($row);
+                    echo appcraft_render_table_row($row);
                 }
                 ?>
             </tbody>

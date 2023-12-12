@@ -1,4 +1,7 @@
-<?php  
+<?php
+defined('ABSPATH') or die('Direct file access not allowed');
+
+  
 function appcraft_get_categories($request) {
     $args = isset($request['category']) ? array('include' => explode(',', $request['category']), 'hide_empty' => 0) : array('hide_empty' => 0);
     $categories = get_categories($args);
@@ -11,17 +14,17 @@ function appcraft_get_categories($request) {
 
     $data = array();
     foreach($parent_ids as $parent_id) {
-        $data = array_merge($data, build_category_tree($categories, $parent_id)); // 为每个父分类 ID 构建分类树
+        $data = array_merge($data, appcraft_build_category_tree($categories, $parent_id)); // 为每个父分类 ID 构建分类树
     }
 
     return new WP_REST_Response($data, 200);
 }
 
-function build_category_tree($categories, $parent = 0) {
+function appcraft_build_category_tree($categories, $parent = 0) {
     $data = array();
     foreach ($categories as $category) {
         if ($category->parent == $parent) {
-            $children = build_category_tree($categories, $category->term_id);
+            $children = appcraft_build_category_tree($categories, $category->term_id);
             $category_data = array(
                 'id' => $category->term_id,
                 'name' => $category->name,
